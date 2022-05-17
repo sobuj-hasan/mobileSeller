@@ -1,0 +1,780 @@
+@import "default.css";
+
+
+/*HEADER*/
+header {
+    height: 70px;
+    background: var(--bgc);
+    transition: .4s;
+}
+.logo img {
+    max-width: 235px;
+}
+
+.logo i {
+    font-size: 22px;
+    padding: 8px;
+    padding-right: 0;
+    transition: .2s;
+}
+
+.logo i:hover {
+    color: var(--sc);
+    cursor: pointer;
+}
+
+.menubar ul {
+    text-align: right;
+}
+
+.menubar ul li {
+    display: inline-block;
+}
+
+.menubar ul li a {
+    font-weight: 500;
+    text-transform: capitalize;
+    display: inline-block;
+    height: 35px;
+    padding: 7px 10px;
+    color: var(--wc);
+}
+.menubar .login-menu {
+    color: var(--wc);
+    border-radius: 5px;
+    border: 1px solid var(--wc);
+}
+
+header .custom-form{
+    background: var(--wlc);
+    height: 40px;
+    width: 85%;
+    border: none;
+    outline: none;
+    border-radius: 10px;
+    padding-left: 10px;
+}
+.menubar button{
+    background: var(--wlc);
+    border: none;
+    height: 40px;
+    width: 15%;
+    outline: none;
+    border-top-right-radius: 10px;
+    border-bottom-right-radius: 10px;
+    transition: 0.2s;
+}
+.menubar button:hover{
+    background: #7d658b;
+}
+
+/*HEADER*/
+
+/*MOBILE MENU*/
+
+/*ACCORDION CUSTOM*/
+.mobile-logo img {
+    width: 150px;
+    padding: 10px 0;
+    margin-left: 10px;
+}
+
+.mobile-logo i {
+    font-size: 20px;
+    float: right;
+    margin: 5px 20px;
+    color: var(--pc);
+    cursor: pointer;
+    padding: 5px;
+}
+
+.mobile-logo i:hover {
+    color: var(--sc);
+}
+
+.custom.accordion-button {
+    text-transform: capitalize;
+    font-size: 15px;
+    -webkit-transition: .4s;
+    transition: .4s;
+    color: var(--pc);
+    font-weight: 400;
+}
+
+.custom.accordion-button:hover {
+    color: var(--sc);
+}
+
+.custom.accordion-button:focus {
+    -webkit-box-shadow: none;
+    box-shadow: none;
+    border: none;
+    border-top: 1px solid #ccc;
+
+}
+
+.custom.accordion-button:not(.collapsed) {
+    color: var(--sc);
+    background: var(--rc);
+    -webkit-transform: none;
+    transform: none;
+    font-weight: 400;
+}
+
+.custom.accordion-button:not(.collapsed)::after {
+    background-image: none;
+    content: "\f068";
+    font-family: 'FontAwesome';
+    -webkit-transform: rotate(0deg) !important;
+    transform: rotate(0deg) !important;
+}
+
+.none.accordion-button:not(.collapsed)::after {
+    content: none;
+    -webkit-transform: rotate(0deg) !important;
+    transform: rotate(0deg) !important;
+}
+
+
+.custom.accordion-button::after {
+    background-image: none;
+    content: "\f067";
+    font-family: 'FontAwesome';
+}
+
+.none.accordion-button::after {
+    content: none;
+}
+
+.custom.accordion-body {
+    padding: 0 0px;
+}
+
+.custom.accordion-body ul {
+    padding: 0;
+    margin: 0;
+}
+
+.custom.accordion-body ul li {
+    list-style: none;
+    padding: 8px 0;
+    -webkit-transition: .4s;
+    transition: .4s;
+}
+
+.custom.accordion-body ul li a {
+    text-decoration: none;
+    font-size: 15px;
+    text-transform: capitalize;
+    color: var(--pc);
+    font-weight: 400;
+    display: inline-block;
+    margin-left: 40px;
+}
+
+.custom.accordion-body ul li a i {
+    font-size: 10px;
+    margin-right: 5px;
+}
+
+.custom.accordion-body ul li:hover {
+    color: var(--wc);
+    background: var(--rc);
+}
+
+.custom.accordion-body ul li:hover a {
+    color: var(--sc);
+}
+
+.custom.accordion-item a {
+    text-decoration: none;
+
+}
+
+
+.accordion-button.custom i {
+    padding: 0 10px;
+}
+
+/*ACCORDION CUSTOM END*/
+
+.mobile-menu {
+    width: 350px;
+    position: fixed;
+    left: -380px;
+    top: 0;
+    z-index: 2;
+    background: var(--wc);
+    height: 100%;
+    overflow: auto;
+    transition: .4s;
+    padding: 10px 0;
+}
+#mobileOverlay {
+    position: fixed;
+    left: 0;
+    width: 100%;
+    top: 0;
+    height: 100%;
+    background: rgba(101, 41, 145, 0.71);
+    z-index: 1;
+    cursor: pointer;
+}
+.mobileAdd {
+    left: 0 !important;
+}
+.mobile-overlay {
+    position: inherit !important;
+}
+/*MOBILE MENU END*/
+
+/* BANNER SECTION START */
+.banner-part{
+    background-image: url(../img/photos/banner.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    margin-top: -70px;
+}
+.banner-overlay {
+    background-color: #ff000000;
+    padding: 100px 0px;
+}
+/* BANNER SECTION END */
+
+/* FOOD MENU SECTION START */
+.foods-part .card img{
+    border-radius: 0px;
+}
+.foods-part .card{
+    border: 1px solid var(--gc);
+}
+/* FOOD MENU SECTION END */
+
+/* NEW TESTY FOOD SECTION START */
+.new-testy .card:hover h5{
+    transition: 0.3s;
+}
+.new-testy .card:hover h5{
+    color: #400e5e;
+}
+/* NEW TESTY FOOD SECTION END */
+
+/* DISTRICT FOOD SECTION START */
+.district-food .box {
+    font-weight: 500;
+    font-size: 16px;
+    color: var(--lbc);
+    background: var(--wlc);
+    padding: 25px 20px;
+    border-radius: 5px;
+    box-shadow: 1px 1px 10px -6px var(--pc);
+}
+/* DISTRICT FOOD SECTION END */
+
+/* LOGIN PAGE CSS START */
+.login {
+    background: #fdfdfd;
+    border-radius: 7px;
+    box-shadow: 4px 4px 10px 0px #00000033;
+}
+
+.login-section {
+    padding-top: 40px;
+    padding-bottom: 40px;
+    padding-left: 40px;
+    padding-right: 22px;
+}
+
+.vendor-signup .login-section {
+    padding-top: 40px;
+    padding-bottom: 40px;
+    padding-left: 40px;
+    padding-right: 40px;
+}
+
+.login-section h4 {
+    font-weight: 600;
+    color: var(--bc);
+}
+
+.login-section p {
+    font-weight: 400;
+    color: var(--bc);
+}
+
+.login-section .form-control {
+    border: 1px solid #CCCCCC;
+    background: #f4f4f4;
+    height: 50px;
+    box-shadow: none !important;
+    font-weight: 500;
+    font-size: 16px;
+    color: var(--xgc);
+    padding-left: 12%;
+}
+
+.login-section input::placeholder {
+    font-weight: 500;
+    font-size: 16px;
+    color: #B0B0B0;
+    line-height: 19px;
+    padding-left: 0%;
+}
+
+.vendor-signup .form-control {
+    border: 1px solid #CCCCCC;
+    background: #f4f4f4;
+    height: 50px;
+    box-shadow: none !important;
+    font-weight: 500;
+    font-size: 16px;
+    color: var(--xgc);
+    padding-left: 4%;
+}
+
+.login-section .login {
+    position: relative;
+}
+
+.login-section .login img {
+    position: absolute;
+    top: 13px;
+    left: 7px;
+}
+
+.login-section label {
+    font-weight: 500;
+    font-size: 16px;
+    color: var(--xgc);
+    line-height: 19px;
+}
+
+.login-section p {
+    font-weight: 500;
+    font-size: 16px;
+    color: var(--xgc);
+    line-height: 19px;
+}
+
+.login-section .text-form {
+    font-weight: 400;
+    font-size: 16px;
+    color: var(--xgc);
+    line-height: 19px;
+}
+
+.login-section button {
+    background: var(--bgc);
+    border: none;
+    height: 50px;
+    border-radius: 7px;
+    font-weight: 500;
+    font-size: 24px;
+    line-height: 28px;
+    color: var(--wc);
+}
+
+.login-section a {
+    font-weight: 600;
+    font-size: 16px;
+    color: var(--xgc);
+}
+
+/* register section */
+.register-section {
+    background-image: url(../img/photos/sign-up.png);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    width: 100%;
+    height: 100%;
+    border-top-right-radius: 7px;
+    border-bottom-right-radius: 7px;
+}
+
+.register-section h4 {
+    font-weight: 600;
+    color: var(--wc);
+    padding-top: 82%;
+}
+
+.sign-up-btn {
+    width: 85%;
+    background: var(--cc);
+    margin-left: 8%;
+}
+
+.sign-up-btn li {
+    margin: 15px 4px;
+}
+
+.sign-up-btn li a i {
+    padding: 8px 10px;
+    font-size: 16px;
+    border: 1px solid var(--bc);
+    color: var(--bc);
+    border-radius: 50px;
+    transition: 0.5s;
+}
+
+.sign-up-btn li a i:hover {
+    background: var(--bc);
+    border: 1px solid var(--bc);
+    color: var(--wc);
+}
+
+.sign-up-page .register-section h4 {
+    padding-top: 123%;
+}
+/* LOGIN PAGE CSS END */
+
+/* CONTACT US PAGE CSS START */
+.about-contact {
+    background: #FAFAFA;
+}
+
+.map {
+    background: #FAFAFA;
+}
+
+.address .section-content h3 {
+    font-weight: 600;
+    font-size: 30px;
+    line-height: 38px;
+    color: var(--pc);
+    border-bottom: 1px solid #CCCCCC;
+    padding-bottom: 10px;
+}
+
+.address .section-content p {
+    color: var(--pc);
+}
+
+.address .contact h4 {
+    color: var(--pc);
+}
+
+.address .contact {
+    background: #f2fbff7a;
+    box-shadow: 10px 10px 20px -7px rgba(0, 0, 0, 0.2);
+    border-radius: 10px;
+}
+
+.address .contact button {
+    font-weight: 600;
+    font-size: 20px;
+    line-height: 27px;
+    color: var(--wc);
+    background: var(--bgc);
+    border-radius: 7px;
+    border: none;
+    padding: 13px 35px;
+    margin-top: 30px;
+}
+
+.form-control {
+    border: 1px solid var(--wc);
+    box-sizing: border-box;
+    border-radius: 5px;
+    height: 52px;
+    box-shadow: 5px 5px 10px 0px #00000026;
+}
+/* CONTACT US PAGE CSS END */
+
+/* RESTAURANT DETAILS PAGE CSS START */
+.details-banner img{
+    width: 100%;
+    max-height: 272px;
+    border-radius: 10px;
+}
+
+.starting h5 span{
+    color: #FF0000;
+}
+.starting p{
+    font-size: 16px;
+}
+
+.review-card{
+    border: 1px solid var(--gc);
+    border-radius: 5px;
+    padding: 10px;
+}
+.review-card img{
+    width: 50px;
+    height: 50px;
+    border: 1px solid var(--pc);
+    border-radius: 50%;
+}
+.review-card .d-flex p{
+    color: var(--lgc);
+}
+.review-card .star-point i{
+    color: #FCC400;
+    font-size: 22px;
+}
+.review-card .star-point .time{
+    color: var(--lgc);
+    font-size: 14px;
+}
+
+/* RESTAURANT DETAILS PAGE CSS END */
+
+/* RESTAURANT FOODS PAGE CSS START */
+.resturant-foods .card{
+    padding: 10px 15px;
+    box-shadow: 0px 4px 4px 0px #00000040;
+    border: 1px solid var(--gc);
+    border-radius: 4px;
+}
+.resturant-foods .card img{
+    max-width: 170px;
+    max-height: 170px;
+}
+.resturant-foods .card h5{
+    transition: 0.3s;
+}
+.resturant-foods .card:hover h5{
+    color: #D01010;
+}
+
+.resturant-foods .card p{
+    line-height: 20px;
+}
+.resturant-foods .card:hover p{
+    color: var(--lbc);
+}
+.resturant-foods .card:hover h6{
+    color: var(--lbc);
+}
+/* RESTAURANT FOODS PAGE CSS END */
+
+/* FOOD DETAILS PAGE CSS START */
+.multiple-img .image-slider{
+    border: 1px solid var(--pc);
+    padding: 8px;
+    border-radius: 5px;
+}
+.multiple-img img {
+    width: 100%;
+    min-height: 70px;
+    max-height: 70px;
+    border: 1px solid var(--lbc);
+    border-radius: 4px;
+}
+
+.food-description span{
+    font-weight: 500;
+    font-size: 18px;
+}
+
+
+
+.food-description p a {
+    font-weight: 700;
+    font-size: 16px;
+    line-height: 24px;
+    color: #444444;
+}
+
+.food-description .img-bg {
+    background: #FFFFFF;
+}
+.food-description img {
+    height: 400px;
+}
+.food-description .quantity input {
+    width: 70px;
+    height: 48px;
+    padding-left: 30px;
+    border: 1px solid #CCCCCC;
+    border-right: none;
+    box-sizing: border-box;
+    position: relative;
+}
+.food-description .quantity input:focus {
+    outline: none;
+    border: 1px solid #CCCCCC;
+}
+.food-description .arrows {
+    border: 1px solid #CCCCCC;
+    width: 35px;
+    background: #FFFFFF;
+}
+.food-description .quantity .up-arrow {
+    background: #FFFFFF;
+    margin-top: 2px;
+}
+.food-description .quantity .up-arrow img,
+.food-description .quantity .down-arrow img {
+    margin-left: 5px;
+    margin-top: 2px;
+    opacity: .6;
+    cursor: pointer;
+}
+.food-description .quantity .line {
+    background: #CCCCCC;
+    height: 1px;
+    width: 25px;
+}
+.food-description .quantity .down-arrow {
+    background: #FFFFFF;
+    margin-top: 2px;
+}
+.food-description .quantity img {
+    height: 8px;
+    width: 16px;
+    margin-bottom: 5px;
+}
+
+/* FOOD DETAILS PAGE CSS END */
+
+/* SEARCH RESULT PAGE CSS START */
+.search-result .card{
+    background: #fdfdfd;
+    padding: 20px;
+}
+.search-food h5 {
+    line-height: 16px;
+    color: var(--sc3);
+}
+.search-food h6 {
+    line-height: 16px;
+    font-size: 15px;
+}
+.search-food p{
+    line-height: 18px;
+}
+.search-food .star i{
+    color: #FCC400;
+}
+
+.search-btn button{
+    font-weight: 500;
+    font-size: 18px;
+    color: var(--wc);
+    background: var(--bgc);
+    width: 100%;
+    padding: 10px 50px;
+}
+
+.search-food {
+    border: 1px solid var(--gc);
+    border-radius: 5px;
+    padding: 15px;
+}
+.visit-btn a{
+    font-weight: 500;
+    font-size: 16px;
+    border: 1px solid #A6A6A6;
+    padding: 10px 50px;
+    width: 100%;
+    transition: 0.4s;
+    color: var(--lbc);
+}
+.visit-btn a:hover{
+    background: var(--bgc);
+    color: var(--wc);
+}
+/* SEARCH RESULT PAGE CSS END */
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/*FOOTER SECTION*/
+footer {
+    background: var(--bgc);
+    color: var(--wc);
+}
+
+.footer-box img {
+    max-width: 200px;
+    margin-bottom: 30px;
+}
+
+.footer-box p {
+    color: var(--wc);
+}
+
+.footer-box h6 {
+    font-weight: 500;
+    border-bottom: 1px solid var(--wc);
+    font-size: 20px;
+}
+
+.footer-box h6 {
+    padding-bottom: 13px;
+}
+
+.footer-menu a {
+    display: block;
+    color: var(--wc);
+    padding: 6px 0;
+    font-size: 16px;
+    font-weight: 500;
+}
+
+.footer-box ul li {
+    padding: 6px 0;
+}
+
+.social-media-footer h4 {
+    border-bottom: 1px solid var(--wc);
+    padding-bottom: 10px;
+    margin-bottom: 10px;
+    font-weight: 500;
+    font-size: 20px;
+    margin-top: 40px;
+}
+
+.social-media-footer a i {
+    height: 25px;
+    width: 25px;
+    line-height: 25px;
+    color: var(--sc);
+    background: var(--wc);
+    border: 1px solid var(--wc);
+    text-align: center;
+    border-radius: 50%;
+    margin-right: 8px;
+    transition: .3s;
+}
+
+.social-media-footer a i:hover {
+    color: var(--sc2);
+    background: var(--wc);
+}
+
+/*FOOTER SECTION END*/
+
+/*COPYRIGHT SECTION*/
+.copyright{
+    background: #400e5e;
+}
+.copyright-section p {
+    padding: 0;
+    margin: 0;
+    text-align: center;
+    color: var(--wc);
+    font-size: 16px;
+    font-weight: 400;
+    padding: 25px 0;
+}
+/*COPYRIGHT SECTION END*/
