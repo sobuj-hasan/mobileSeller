@@ -1,7 +1,7 @@
 @extends('layouts.safetyapp')
 @section('title', 'Registration')
 @section('body')
-    <!-- Sign up part start -->
+    {{-- <!-- Sign up part start -->
     <section id="registration-section" class="py-5">
         <div class="container">
             <div class="row justify-content-center">
@@ -55,5 +55,63 @@
             </div>
         </div>
     </section>
-    <!-- sign up part end -->
+    <!-- sign up part end --> --}}
+    <div class="login-part sign-up-page vendor-signup my-5">
+        <div class="container">
+            <div class="row justify-content-center">
+                <div class="col-xl-7 col-lg-7 col-md-9 col-sm-12">
+                    <div class="login">
+                        <div class="login-section">
+                            <h4 class="text-center">Welcome to</h4>
+                            <p class="text-center mb-5">Sign Up</p>
+                            <form method="POST" action="{{ route('register') }}">
+                                @csrf
+                                <div class="mt-4">
+                                    <label for="">Full Name </label>
+                                    <input type="text" class="form-control" placeholder="Name" value="{{ old('name') }}" name="name">
+                                    @error('name')
+                                        <span class="text-danger">{{ $message }}</span>
+                                    @enderror
+                                </div>
+                                <div class="mt-4">
+                                    <label for="">Phone No.</label>
+                                    <input type="text" class="form-control" placeholder="Phone no." value="{{ old('phone') }}" name="phone">
+                                    @error('phone')
+                                        <span class="text-danger">{{ $message }}</span>
+                                    @enderror
+                                </div>
+                                <div class="mt-4">
+                                    <label for="">Email Address</label>
+                                    <input type="text" class="form-control" placeholder="Email" value="{{ old('email') }}" name="email">
+                                    @error('email')
+                                        <span class="text-danger">{{ $message }}</span>
+                                    @enderror
+                                </div>
+                                <div class="mt-4">
+                                    <label for="">Password</label>
+                                    <input type="password" class="form-control" placeholder="Password" value="{{ old('password') }}" name="password">
+                                    @error('password')
+                                        <span class="text-danger">{{ $message }}</span>
+                                    @enderror
+                                </div>
+                                <div class="mt-4">
+                                    <label for="">Confirm Password</label>
+                                    <input type="password" class="form-control" placeholder="Re-enter-password" value="{{ old('password_confirmation') }}" name="password_confirmation">
+                                    @error('password_confirmation')
+                                        <span class="text-danger">{{ $message }}</span>
+                                    @enderror
+                                </div>
+                                <div class="mb-4 mt-3 form-check">
+                                    <input type="checkbox" class="form-check-input" id="exampleCheck1">
+                                    <label class="form-check-label" for="exampleCheck1">Show Password</label>
+                                </div>
+                                <button class="w-100 mb-2" type="submit">Submit</button>
+                                <span class="form-text">Already Have a Account ?<a class="text-bolder" href="{{ route('login') }}"> Sign In</a></span>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
 @endsection
