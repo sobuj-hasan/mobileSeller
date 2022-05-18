@@ -72,12 +72,14 @@
                             <li>
                                 <a href="{{ route('contact') }}">Contact Us</a>
                             </li>
+
                             <li class="mx-1">
                                 <a href="{{ route('login') }}" class="login-menu">Log In</a>
                             </li>
                             <li class="mx-1">
                                 <a href="{{ route('register') }}" class="login-menu">Create Account</a>
                             </li>
+
                         </ul>
                     </div>
                 </div>
@@ -148,7 +150,7 @@
             <div class="row pb-5">
                 <div class="col-12 col-md-6 col-lg-4 mb-4 mb-md-0">
                     <div class="footer-box">
-                        <img src="assets/img/logo/logo.png" alt="Logo">
+                        <img src="{{ asset('assets/img/logo/logo.png') }}" alt="Logo">
                         <p>
                             Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text
                         </p>

@@ -30,21 +30,14 @@ Route::get('/dashboard', function () {
 
 // Fontend Controller Routes
 Route::get('/', [FrontendController::class, 'index'])->name('index');
-Route::get('shop', [FrontendController::class, 'shop'])->name('shop');
-Route::get('category/wise/shop/{id}', [FrontendController::class, 'category_wise_shop'])->name('category.shop');
-Route::get('product/details/{slug}', [FrontendController::class, 'productdetails'])->name('product.details');
-Route::get('cart', [FrontendController::class, 'cart'])->name('cart');
-Route::get('checkout', [FrontendController::class, 'checkout'])->name('checkout');
-Route::get('training', [FrontendController::class, 'training'])->name('training');
-Route::get('finance', [FrontendController::class, 'finance'])->name('finance');
-Route::get('safety/management', [FrontendController::class, 'safetymanagement'])->name('safety.management');
-Route::get('security/research', [FrontendController::class, 'securityresearch'])->name('security.research');
-Route::get('media/centers', [FrontendController::class, 'mediacenter'])->name('media.center');
 Route::get('aboutus', [FrontendController::class, 'about'])->name('about');
 Route::get('contact', [FrontendController::class, 'contact'])->name('contact');
-Route::get('subscribe', [FrontendController::class, 'subscribe'])->name('subscribe');
+Route::get('food/details', [FrontendController::class, 'food_details'])->name('food.details');
+Route::get('restaurant/details', [FrontendController::class, 'restaurant_details'])->name('restaurant.details');
+Route::get('search/result', [FrontendController::class, 'search_result'])->name('search.result');
 Route::get('contact/message', [FrontendController::class, 'contactmessage'])->name('contact.message');
-Route::get('blog/details/{slug}', [FrontendController::class, 'blogdetails'])->name('blog.details');
+Route::get('cart', [FrontendController::class, 'cart'])->name('cart');
+Route::get('checkout', [FrontendController::class, 'checkout'])->name('checkout');
 
 
 Route::post('add_to_cart', [CartController::class, 'add_to_cart'])->name('add_to_cart');

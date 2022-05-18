@@ -7,8 +7,7 @@
             <div class="row">
                 <div class="col-12 text-center">
                     <div class="breab text-start text-dark py-3">
-                        <a class="text-dark" href="#">Home</a>&nbsp;<span> &gt; </span>&nbsp; <a
-                            class="text-dark" href="#">Checkout</a>
+                        <a class="text-dark" href="#">Home</a>&nbsp;<span> &gt; </span>&nbsp; <a class="text-dark" href="#">Checkout</a>
                     </div>
                     <h5 class="py-3">Loged in as ({{ Auth::user()->name }})</h5>
                 </div>

@@ -20,62 +20,22 @@ class FrontendController extends Controller
         return view('index', compact('explore_products', 'blogs'));
     }
 
-    public function shop(){
-        $explore_products = Product::where('category_id', 1)->inRandomOrder()->limit(4)->get();
-        $categories = Category::limit(20)->get();
-        $topsell_products = Product::inRandomOrder()->limit(48)->get();
-        $newarrivals = Product::latest()->limit(48)->get();
-        $blogs = Blog::inRandomOrder()->limit(3)->get();
-        return view('shop', compact('categories', 'topsell_products', 'newarrivals', 'explore_products', 'blogs'));
+    public function food_details(){
+        return view('food_details');
     }
 
-    public function category_wise_shop(Request $request, $id){
-        $categories = Category::limit(20)->get();
-        $explore_products = Product::where('category_id', 1)->inRandomOrder()->limit(4)->get();
-        $category_product = Product::where('category_id', $id)->get();
-        return view('category_wise_shop', compact('categories', 'explore_products', 'category_product'));
+    public function restaurant_details(){
+        return view('restaurant_details');
     }
 
-    public function productdetails(Request $request,$slug){
-        $explore_products = Product::where('category_id', 1)->inRandomOrder()->limit(4)->get();
-        $singleproduct = Product::where('slug', $slug)->firstOrFail();
-        $related_products = Product::where('category_id', $singleproduct->category_id)->where('id', '!=', $singleproduct->id)->get();
-        $bestsell_products = Product::inRandomOrder()->limit(48)->get();
-        $blogs = Blog::inRandomOrder()->limit(3)->get();
-        return view('product_details', compact('singleproduct', 'related_products', 'bestsell_products', 'blogs', 'explore_products'));
-    }
-
-    public function blogdetails($slug){
-        $blogs = Blog::inRandomOrder()->limit(3)->get();
-        $single_blog = Blog::where('slug', $slug)->firstOrFail();
-        return view('blog_details', compact('single_blog', 'blogs'));
+    public function search_result(){
+        return view('search_result');
     }
 
     public function cart(){
         return view('cart');
     }
 
-    
-    public function training(){
-        return view('training');
-    }
-    
-    public function finance(){
-        return view('finance');
-    }
-    
-    public function safetymanagement(){
-        return view('safety_management');
-    }
-    
-    public function securityresearch(){
-        return view('security_research');
-    }
-    
-    public function mediacenter(){
-        return view('media_center');
-    }
-    
     public function contact(){
         return view('contact');
     }
