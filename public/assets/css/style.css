@@ -3,7 +3,7 @@
 
 /*HEADER*/
 header {
-    height: 70px;
+    height: 80px;
     background: var(--bgc);
     transition: .4s;
 }
@@ -234,7 +234,7 @@ header .custom-form{
     background-repeat: no-repeat;
     background-size: cover;
     background-position: center;
-    margin-top: -70px;
+    margin-top: -80px;
 }
 .banner-overlay {
     background-color: #ff000000;
@@ -679,6 +679,33 @@ header .custom-form{
 }
 /* SEARCH RESULT PAGE CSS END */
 
+/* ABOUT US PAGE CSS START */
+.aboutus-part {
+    background: var(--apc);
+
+}
+.aboutus-part h3{
+    color: var(--wc);
+    font-weight: 500;
+    font-size: 32px;
+    line-height: 36px;
+}
+.aboutus-part p{
+    margin-right: 40%;
+    color: var(--wc);
+}
+
+.why-us h3{
+    font-weight: 500;
+    font-size: 28px;
+    color: var(--lbc);
+}
+.our-team p{
+    font-size: 18px;
+}
+
+/* ABOUT US PAGE CSS END */
+
 
 
 
@@ -766,7 +793,7 @@ footer {
 
 /*COPYRIGHT SECTION*/
 .copyright{
-    background: #400e5e;
+    background: var(--apc);
 }
 .copyright-section p {
     padding: 0;

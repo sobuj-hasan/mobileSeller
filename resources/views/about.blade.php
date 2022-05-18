@@ -1,34 +1,73 @@
 @extends('layouts.safetyapp')
 @section('title', 'About Us')
 @section('body')
-    <!-- About us part start -->
-    <section class="about-contact py-5">
+    <!-- BANNER SECTION START -->
+    <section class="aboutus-part py-5">
         <div class="container">
-            <div class="row">
-                <div class="col text-center">
-                    <div class="content">
-                        <h2>@lang('home.aboutus')</h2>
-                        <div class="small-line"></div>
-                    </div>
+            <h3 class="mt-2">Explore the best</h3>
+            <h3 class="">Food in The Mobile Seller</h3>
+            <h3 class="">With Us</h3>
+            <p class="mt-4">That’s our motto to make this website Real, It all started when our friend outside Balikpapan asked for best culinary experience in Balikpapan but we can’t provide enough information for our friend to taste the best food in Balikpapan.</p>
+        </div>
+    </section>
+    <!-- BANNER SECTION START -->
+
+    <!-- SERVICE SECTION START -->
+    <section class="why-us py-5">
+        <div class="container">
+            <h1 class="text-center mb-lg-5">Why Us ?</h1>
+            <div class="row justify-content-center">
+                <div class="col-xl-4 col-lg-4 col-md-4 col-sm-6 text-center">
+                    <h3 class="my-3">Complete</h3>
+                    <img src="{{ asset('assets/img/photos/complete.png') }}" alt="service-img">
+                    <p class="my-3 mx-lg-5">We provide a Complete
+                        Information about Balikpapan
+                        Cuisine
+                    </p>
                 </div>
-            </div>
-            <div class="row py-5 mt-3">
-                <div class="col-md-6 align-self-center">
-                    <img width="100%" src="{{ asset('safety_assets/img/photos/about-page.png') }}" alt="management">
+                <div class="col-xl-4 col-lg-4 col-md-4 col-sm-6 text-center">
+                    <h3 class="my-3">Wonderful</h3>
+                    <img src="{{ asset('assets/img/photos/wonderful.png') }}" alt="service-img">
+                    <p class="my-3 mx-lg-5">We provide a Complete
+                        Information about Balikpapan
+                        Cuisine
+                    </p>
                 </div>
-                <div class="col-md-6 align-self-center mt-3 mt-md-0">
-                    <h2>@lang('home.who_we_are')</h2>
-                    <p>@lang('home.aboutus_text')</p>
-                    <p>@lang('home.aboutus_text2')</p>
-                    <p>@lang('home.aboutus_text3')</p>
-                    <p>@lang('home.aboutus_text4')</p>
-                    <p>@lang('home.aboutus_text5')</p>
-                    <p>@lang('home.aboutus_text6')</p>
-                    <p>@lang('home.aboutus_text7')</p>
-                    <p>@lang('home.aboutus_text8')</p>
+                <div class="col-xl-4 col-lg-4 col-md-4 col-sm-6 text-center">
+                    <h3 class="my-3">Trusted</h3>
+                    <img src="{{ asset('assets/img/photos/trusted.png') }}" alt="service-img">
+                    <p class="my-3 mx-lg-5">We provide a Complete
+                        Information about Balikpapan
+                        Cuisine
+                    </p>
                 </div>
             </div>
         </div>
     </section>
-    <!-- About us part End -->
+    <!-- SERVICE SECTION START -->
+
+    <!-- OUR TEAM SECTION START -->
+    <section class="our-team py-5">
+        <div class="container">
+            <h1 class="text-center mb-lg-5">Our Tech Team</h1>
+            <div class="row justify-content-center">
+                <div class="col-xl-4 text-center my-3">
+                    <img src="assets/img/photos/team1.png" alt="team-member-img">
+                    <h4 class="my-2">Mr. Jhon Abraham</h4>
+                    <p class="my-2">UI/UX Designer</p>
+                </div>
+                <div class="col-xl-4 text-center my-3">
+                    <img src="assets/img/photos/team2.png" alt="team-member-img">
+                    <h4 class="my-2">Mr. Sakib Al Hasan</h4>
+                    <p class="my-2">Front-end Developer</p>
+                </div>
+                <div class="col-xl-4 text-center my-3">
+                    <img src="assets/img/photos/team3.png" alt="team-member-img">
+                    <h4 class="my-2">Member Name Here</h4>
+                    <p class="my-2">Full-stack Developer</p>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- OUR TEAM SECTION START -->
 @endsection

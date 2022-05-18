@@ -64,19 +64,19 @@
                     <div class="menubar d-flex justify-content-between align-items-center">
                         <ul>
                             <li>
-                                <a href="index.html">Home </a>
+                                <a href="{{ route('index') }}">Home </a>
                             </li>
                             <li>
-                                <a href="#">About Us</a>
+                                <a href="{{ route('about') }}">About Us</a>
                             </li>
                             <li>
-                                <a href="contactus.html">Contact Us</a>
+                                <a href="{{ route('contact') }}">Contact Us</a>
                             </li>
                             <li class="mx-1">
-                                <a href="login.html" class="login-menu">Log In</a>
+                                <a href="{{ route('login') }}" class="login-menu">Log In</a>
                             </li>
                             <li class="mx-1">
-                                <a href="register.html" class="login-menu">Create Account</a>
+                                <a href="{{ route('register') }}" class="login-menu">Create Account</a>
                             </li>
                         </ul>
                     </div>
@@ -85,71 +85,60 @@
         </div>
     </header>
     <!-- HEADER SECTION END -->
-
-    <!-- BANNER SECTION START -->
-    <section class="banner-part">
-        <!-- MOBILE MENU -->
-        <div id="mobile-menu" class="mobile-menu">
-            <!-- accordion-->
-            <div class="accordion accordion-flush" id="accordionFlushExample">
-        
-                <div class="mobile-logo mb-5">
+    <!-- MOBILE MENU -->
+    <div id="mobile-menu" class="mobile-menu">
+        <!-- accordion-->
+        <div class="accordion accordion-flush" id="accordionFlushExample">
+    
+            <div class="mobile-logo mb-5">
+                <a href="#">
+                    <img src="{{ asset('assets/img/logo/logo.png') }}" alt="mobile-logo">
+                </a>
+                <i id="mobile-cross" class="fa fa-times" onClick="mobileClick()"></i>
+            </div>
+    
+            <div class="accordion-item custom ">
+                <h2 class="accordion-header" id="flush-headingThree">
                     <a href="#">
-                        <img src="assets/img/logo/logo.png" alt="mobile-logo">
-                    </a>
-                    <i id="mobile-cross" class="fa fa-times" onClick="mobileClick()"></i>
-                </div>
-        
-                <div class="accordion-item custom ">
-                    <h2 class="accordion-header" id="flush-headingThree">
-                        <a href="#">
-                            <button class="accordion-button custom collapsed none" type="button">
-                                Home
-                            </button>
-                        </a>
-                    </h2>
-                </div>
-                <div class="accordion-item custom">
-                    <h2 class="accordion-header" id="flush-headingThree">
-                        <a href="#">
-                            <button class="accordion-button custom collapsed none" type="button">
-                                About
-                            </button>
-                        </a>
-                    </h2>
-                </div>
-                <div class="accordion-item">
-                    <h2 class="accordion-header" id="flush-headingTwo">
-                        <button class="accordion-button custom collapsed" type="button" data-bs-toggle="collapse"
-                            data-bs-target="#two" aria-expanded="false" aria-controls="flush-collapseTwo">
-                            Services
+                        <button class="accordion-button custom collapsed none" type="button">
+                            Home
                         </button>
-                    </h2>
-                    <div id="two" class="accordion-collapse collapse" aria-labelledby="two"
-                        data-bs-parent="#accordionFlushExample">
-                        <div class="accordion-body custom">
-                            <ul>
-                                <li><a href="#"><i class="fa fa-chevron-right"></i>services</a></li>
-        
-                                <li><a href="#"><i class="fa fa-chevron-right"></i>sector</a></li>
-                            </ul>
-                        </div>
+                    </a>
+                </h2>
+            </div>
+            <div class="accordion-item custom">
+                <h2 class="accordion-header" id="flush-headingThree">
+                    <a href="#">
+                        <button class="accordion-button custom collapsed none" type="button">
+                            About
+                        </button>
+                    </a>
+                </h2>
+            </div>
+            <div class="accordion-item">
+                <h2 class="accordion-header" id="flush-headingTwo">
+                    <button class="accordion-button custom collapsed" type="button" data-bs-toggle="collapse"
+                        data-bs-target="#two" aria-expanded="false" aria-controls="flush-collapseTwo">
+                        Services
+                    </button>
+                </h2>
+                <div id="two" class="accordion-collapse collapse" aria-labelledby="two"
+                    data-bs-parent="#accordionFlushExample">
+                    <div class="accordion-body custom">
+                        <ul>
+                            <li><a href="#"><i class="fa fa-chevron-right"></i>services</a></li>
+    
+                            <li><a href="#"><i class="fa fa-chevron-right"></i>sector</a></li>
+                        </ul>
                     </div>
                 </div>
-        
             </div>
-        
+    
         </div>
-        <div id="mobileOverlay" class="mobile-overlay" onClick="mobileClick()"></div>
-        <!--   END MOBILE MENU-->
-
-        <div class="banner-overlay">
-            <div class="container text-center pt-3">
-                <h2 class="pt-5 pb-4">Explore the best food in The Mobile Seller</h2>
-            </div>
-        </div>
-    </section>
-    <!-- BANNER SECTION START --> 
+    
+    </div>
+    <div id="mobileOverlay" class="mobile-overlay" onClick="mobileClick()"></div>
+    <!--   END MOBILE MENU-->
 
     @yield('body')
 

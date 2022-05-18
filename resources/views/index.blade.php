@@ -1,6 +1,15 @@
 @extends('layouts.safetyapp')
 @section('title', 'Home Page')
 @section('body')
+    <!-- BANNER SECTION START -->
+    <section class="banner-part">
+        <div class="banner-overlay">
+            <div class="container text-center pt-3">
+                <h2 class="pt-5 pb-4">Explore the best food in The Mobile Seller</h2>
+            </div>
+        </div>
+    </section>
+    <!-- BANNER SECTION START --> 
     <!-- FOODS PART START -->
     <section class="foods-part my-5">
         <div class="container">
