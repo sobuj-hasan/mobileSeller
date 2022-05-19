@@ -18,100 +18,100 @@
             <div class="row justify-content-center">
                 <div class="col-xl-4 col-lg-6 col-md-6 col-sm-12 my-3">
                     <div class="card">
-                        <img src="assets/img/foods/1.jpg" class="card-img-top" alt="food-img">
+                        <img src="{{ asset('assets/img/foods/1.jpg') }}" class="card-img-top" alt="food-img">
                         <div class="card-body">
-                            <h5 class="card-title">Food Name Here</h5>
+                            <h5 class="card-title">Restaurant Name Here</h5>
                             <p class="paragraph">Some quick example text to build on the card title and make up the bulk of the card's
                                 content.</p>
-                            <a href="#" class="custom-btn">View Details &nbsp;<i class="fa-solid fa-right-long"></i></a>
+                            <a href="{{ route('restaurant.details') }}" class="custom-btn">View Details &nbsp;<i class="fa-solid fa-right-long"></i></a>
                         </div>
                     </div>
                 </div>
                 <div class="col-xl-4 col-lg-6 col-md-6 col-sm-12 my-3">
                     <div class="card">
-                        <img src="assets/img/foods/2.jpg" class="card-img-top" alt="food-img">
+                        <img src="{{ asset('assets/img/foods/2.jpg') }}" class="card-img-top" alt="food-img">
                         <div class="card-body">
-                            <h5 class="card-title">Food Name Here</h5>
+                            <h5 class="card-title">Restaurant Name Here</h5>
                             <p class="paragraph">Some quick example text to build on the card title and make up the bulk of the card's
                                 content.</p>
-                            <a href="#" class="custom-btn">View Details &nbsp;<i class="fa-solid fa-right-long"></i></a>
+                            <a href="{{ route('restaurant.details') }}" class="custom-btn">View Details &nbsp;<i class="fa-solid fa-right-long"></i></a>
                         </div>
                     </div>
                 </div>
                 <div class="col-xl-4 col-lg-6 col-md-6 col-sm-12 my-3">
                     <div class="card">
-                        <img src="assets/img/foods/3.png" class="card-img-top" alt="food-img">
+                        <img src="{{ asset('assets/img/foods/3.png') }}" class="card-img-top" alt="food-img">
                         <div class="card-body">
-                            <h5 class="card-title">Food Name Here</h5>
+                            <h5 class="card-title">Restaurant Name Here</h5>
                             <p class="paragraph">Some quick example text to build on the card title and make up the bulk of the card's
                                 content.</p>
-                            <a href="#" class="custom-btn">View Details &nbsp;<i class="fa-solid fa-right-long"></i></a>
+                            <a href="{{ route('restaurant.details') }}" class="custom-btn">View Details &nbsp;<i class="fa-solid fa-right-long"></i></a>
                         </div>
                     </div>
                 </div>
                 <div class="col-xl-4 col-lg-6 col-md-6 col-sm-12 my-3">
                     <div class="card">
-                        <img src="assets/img/foods/5.png" class="card-img-top" alt="food-img">
+                        <img src="{{ asset('assets/img/foods/5.png') }}" class="card-img-top" alt="food-img">
                         <div class="card-body">
-                            <h5 class="card-title">Food Name Here</h5>
+                            <h5 class="card-title">Restaurant Name Here</h5>
                             <p class="paragraph">Some quick example text to build on the card title and make up the bulk of the card's
                                 content.</p>
-                            <a href="#" class="custom-btn">View Details &nbsp;<i class="fa-solid fa-right-long"></i></a>
+                            <a href="{{ route('restaurant.details') }}" class="custom-btn">View Details &nbsp;<i class="fa-solid fa-right-long"></i></a>
                         </div>
                     </div>
                 </div>
                 <div class="col-xl-4 col-lg-6 col-md-6 col-sm-12 my-3">
                     <div class="card">
-                        <img src="assets/img/foods/6.png" class="card-img-top" alt="food-img">
+                        <img src="{{ asset('assets/img/foods/6.png') }}" class="card-img-top" alt="food-img">
                         <div class="card-body">
-                            <h5 class="card-title">Food Name Here</h5>
+                            <h5 class="card-title">Restaurant Name Here</h5>
                             <p class="paragraph">Some quick example text to build on the card title and make up the bulk of the card's
                                 content.</p>
-                            <a href="#" class="custom-btn">View Details &nbsp;<i class="fa-solid fa-right-long"></i></a>
+                            <a href="{{ route('restaurant.details') }}" class="custom-btn">View Details &nbsp;<i class="fa-solid fa-right-long"></i></a>
                         </div>
                     </div>
                 </div>
                 <div class="col-xl-4 col-lg-6 col-md-6 col-sm-12 my-3">
                     <div class="card">
-                        <img src="assets/img/foods/3.png" class="card-img-top" alt="food-img">
+                        <img src="{{ asset('assets/img/foods/3.png') }}" class="card-img-top" alt="food-img">
                         <div class="card-body">
-                            <h5 class="card-title">Food Name Here</h5>
+                            <h5 class="card-title">Restaurant Name Here</h5>
                             <p class="paragraph">Some quick example text to build on the card title and make up the bulk of the card's
                                 content.</p>
-                            <a href="#" class="custom-btn">View Details &nbsp;<i class="fa-solid fa-right-long"></i></a>
+                            <a href="{{ route('restaurant.details') }}" class="custom-btn">View Details &nbsp;<i class="fa-solid fa-right-long"></i></a>
                         </div>
                     </div>
                 </div>
                 <div class="col-xl-4 col-lg-6 col-md-6 col-sm-12 my-3">
                     <div class="card">
-                        <img src="assets/img/foods/4.png" class="card-img-top" alt="food-img">
+                        <img src="{{ asset('assets/img/foods/4.png') }}" class="card-img-top" alt="food-img">
                         <div class="card-body">
-                            <h5 class="card-title">Food Name Here</h5>
+                            <h5 class="card-title">Restaurant Name Here</h5>
                             <p class="paragraph">Some quick example text to build on the card title and make up the bulk of the card's
                                 content.</p>
-                            <a href="#" class="custom-btn">View Details &nbsp;<i class="fa-solid fa-right-long"></i></a>
+                            <a href="{{ route('restaurant.details') }}" class="custom-btn">View Details &nbsp;<i class="fa-solid fa-right-long"></i></a>
                         </div>
                     </div>
                 </div>
                 <div class="col-xl-4 col-lg-6 col-md-6 col-sm-12 my-3">
                     <div class="card">
-                        <img src="assets/img/foods/5.png" class="card-img-top" alt="food-img">
+                        <img src="{{ asset('assets/img/foods/5.png') }}" class="card-img-top" alt="food-img">
                         <div class="card-body">
-                            <h5 class="card-title">Food Name Here</h5>
+                            <h5 class="card-title">Restaurant Name Here</h5>
                             <p class="paragraph">Some quick example text to build on the card title and make up the bulk of the card's
                                 content.</p>
-                            <a href="#" class="custom-btn">View Details &nbsp;<i class="fa-solid fa-right-long"></i></a>
+                            <a href="{{ route('restaurant.details') }}" class="custom-btn">View Details &nbsp;<i class="fa-solid fa-right-long"></i></a>
                         </div>
                     </div>
                 </div>
                 <div class="col-xl-4 col-lg-6 col-md-6 col-sm-12 my-3">
                     <div class="card">
-                        <img src="assets/img/foods/6.png" class="card-img-top" alt="food-img">
+                        <img src="{{ asset('assets/img/foods/6.png') }}" class="card-img-top" alt="food-img">
                         <div class="card-body">
-                            <h5 class="card-title">Food Name Here</h5>
+                            <h5 class="card-title">Restaurant Name Here</h5>
                             <p class="paragraph">Some quick example text to build on the card title and make up the bulk of the card's
                                 content.</p>
-                            <a href="#" class="custom-btn">View Details &nbsp;<i class="fa-solid fa-right-long"></i></a>
+                            <a href="{{ route('restaurant.details') }}" class="custom-btn">View Details &nbsp;<i class="fa-solid fa-right-long"></i></a>
                         </div>
                     </div>
                 </div>
@@ -130,9 +130,9 @@
             <div class="row taste-food-slider">
                 <div class="col-xl-3 my-3 mx-2 slider-item">
                     <div class="card">
-                        <img src="assets/img/foods/testy-food1.jpg" class="card-img-top" alt="food-img">
+                        <img src="{{ asset('assets/img/foods/testy-food1.jpg') }}" class="card-img-top" alt="food-img">
                         <div class="card-body">
-                            <a href="#">
+                            <a href="{{ route('food.details') }}">
                                 <h5 class="card-title">Food Name Here</h5>
                             </a>
                             <p class="paragraph">Some quick example text to build on the card title and make up the bulk of the card'scontent.</p>
@@ -141,9 +141,9 @@
                 </div>
                 <div class="col-xl-3 my-3 mx-2 slider-item">
                     <div class="card">
-                        <img src="assets/img/foods/testy-food2.png" class="card-img-top" alt="food-img">
+                        <img src="{{ asset('assets/img/foods/testy-food2.png') }}" class="card-img-top" alt="food-img">
                         <div class="card-body">
-                            <a href="#">
+                            <a href="{{ route('food.details') }}">
                                 <h5 class="card-title">Food Name Here</h5>
                             </a>
                             <p class="paragraph">Some quick example text to build on the card title and make up the bulk of the card'scontent.</p>
@@ -152,9 +152,9 @@
                 </div>
                 <div class="col-xl-3 my-3 mx-2 slider-item">
                     <div class="card">
-                        <img src="assets/img/foods/testy-food3.png" class="card-img-top" alt="food-img">
+                        <img src="{{ asset('assets/img/foods/testy-food3.png') }}" class="card-img-top" alt="food-img">
                         <div class="card-body">
-                            <a href="#">
+                            <a href="{{ route('food.details') }}">
                                 <h5 class="card-title">Food Name Here</h5>
                             </a>
                             <p class="paragraph">Some quick example text to build on the card title and make up the bulk of the card'scontent.</p>
@@ -163,9 +163,9 @@
                 </div>
                 <div class="col-xl-3 my-3 mx-2 slider-item">
                     <div class="card">
-                        <img src="assets/img/foods/testy-food1.jpg" class="card-img-top" alt="food-img">
+                        <img src="{{ asset('assets/img/foods/testy-food1.jpg') }}" class="card-img-top" alt="food-img">
                         <div class="card-body">
-                            <a href="#">
+                            <a href="{{ route('food.details') }}">
                                 <h5 class="card-title">Food Name Here</h5>
                             </a>
                             <p class="paragraph">Some quick example text to build on the card title and make up the bulk of the card'scontent.</p>
@@ -174,9 +174,9 @@
                 </div>
                 <div class="col-xl-3 my-3 mx-2 slider-item">
                     <div class="card">
-                        <img src="assets/img/foods/testy-food4.png" class="card-img-top" alt="food-img">
+                        <img src="{{ asset('assets/img/foods/testy-food4.png') }}" class="card-img-top" alt="food-img">
                         <div class="card-body">
-                            <a href="#">
+                            <a href="{{ route('food.details') }}">
                                 <h5 class="card-title">Food Name Here</h5>
                             </a>
                             <p class="paragraph">Some quick example text to build on the card title and make up the bulk of the card'scontent.</p>
@@ -185,9 +185,9 @@
                 </div>
                 <div class="col-xl-3 my-3 mx-2 slider-item">
                     <div class="card">
-                        <img src="assets/img/foods/testy-food2.png" class="card-img-top" alt="food-img">
+                        <img src="{{ asset('assets/img/foods/testy-food2.png') }}" class="card-img-top" alt="food-img">
                         <div class="card-body">
-                            <a href="#">
+                            <a href="{{ route('food.details') }}">
                                 <h5 class="card-title">Food Name Here</h5>
                             </a>
                             <p class="paragraph">Some quick example text to build on the card title and make up the bulk of the card'scontent.</p>

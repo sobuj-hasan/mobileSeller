@@ -50,15 +50,16 @@
                     </div>
                 </div>
                 <div class="col-md-4 d-none d-md-block">
-                    <div class="menubar d-flex justify-content-center">
-                        <div class="input-group custom-group">
-                            <input type="text" class="custom-form" placeholder="Specify your taste"
-                                aria-label="Recipient's username" aria-describedby="button-addon2">
-                            <button class="btn btn-outline-secondary" type="button" id="button-addon2">
-                                <i class="fa-solid fa-magnifying-glass"></i>
-                            </button>
+                    <form action="{{ route('search.result') }}">
+                        <div class="menubar d-flex justify-content-center">
+                            <div class="input-group custom-group">
+                                <input type="text" class="custom-form" placeholder="Specify your taste" aria-label="Recipient's username" aria-describedby="button-addon2">
+                                <button class="btn btn-outline-secondary" type="submit" id="button-addon2">
+                                    <i class="fa-solid fa-magnifying-glass"></i>
+                                </button>
+                            </div>
                         </div>
-                    </div>
+                    </form>
                 </div>
                 <div class="col-md-5 d-none d-md-block">
                     <div class="menubar d-flex justify-content-center align-items-center">
@@ -195,7 +196,7 @@
                         <h6>Importent Link</h6>
 
                         <div class="footer-menu">
-                            <a href="#">About Us</a>
+                            <a href="{{ route('about') }}">About Us</a>
                             <a href="#">Our Services</a>
                             <a href="#">Food Order</a>
                             <a href="#">Privacy Policy</a>

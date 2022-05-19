@@ -1,7 +1,7 @@
 @extends('layouts.safetyapp')
 @section('title', 'Search Result')
 @section('body')
-    <section class="search-result mt-5 py-5">
+    <section class="search-result py-5">
         <div class="container mt-4">
             <h4 class="mb-5">Search Result for "Gulai Kepala Kakap"</h4>
             <div class="row">
@@ -117,7 +117,7 @@
                                             </div>
                                         </div>
                                         <div class="visit-btn mt-3">
-                                            <a href="restaurant_details.html">Visit Foods</a>
+                                            <a href="{{ route('restaurant.details') }}">Visit Foods</a>
                                         </div>
                                     </div>
                                 </div>
@@ -149,7 +149,7 @@
                                             </div>
                                         </div>
                                         <div class="visit-btn mt-3">
-                                            <a href="restaurant_details.html">Visit Foods</a>
+                                            <a href="{{ route('restaurant.details') }}">Visit Foods</a>
                                         </div>
                                     </div>
                                 </div>
@@ -181,7 +181,7 @@
                                             </div>
                                         </div>
                                         <div class="visit-btn mt-3">
-                                            <a href="restaurant_details.html">Visit Foods</a>
+                                            <a href="{{ route('restaurant.details') }}">Visit Foods</a>
                                         </div>
                                     </div>
                                 </div>
@@ -213,7 +213,7 @@
                                             </div>
                                         </div>
                                         <div class="visit-btn mt-3">
-                                            <a href="restaurant_details.html">Visit Foods</a>
+                                            <a href="{{ route('restaurant.details') }}">Visit Foods</a>
                                         </div>
                                     </div>
                                 </div>
@@ -245,7 +245,7 @@
                                             </div>
                                         </div>
                                         <div class="visit-btn mt-3">
-                                            <a href="restaurant_details.html">Visit Foods</a>
+                                            <a href="{{ route('restaurant.details') }}">Visit Foods</a>
                                         </div>
                                     </div>
                                 </div>
@@ -277,7 +277,7 @@
                                             </div>
                                         </div>
                                         <div class="visit-btn mt-3">
-                                            <a href="restaurant_details.html">Visit Foods</a>
+                                            <a href="{{ route('restaurant.details') }}">Visit Foods</a>
                                         </div>
                                     </div>
                                 </div>

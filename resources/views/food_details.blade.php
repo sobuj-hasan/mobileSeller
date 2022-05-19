@@ -3,7 +3,7 @@
 @section('body')
     <!-- RESTAURANT DETAILS PART START -->
     <section class="food-details-banner py-5">
-        <div class="container mt-5">
+        <div class="container">
             <div class="row">
                 <div class="col-xl-6 col-lg-6 col-md-12 col-sm-12">
                     <div class="col-12 mt-4">
@@ -216,7 +216,7 @@
             <div class="row justify-content-center">
                 <div class="col-xl-6 col-lg-6 col-md-12 col-sm-12 my-3">
                     <div class="card">
-                        <a href="#">
+                        <a href="{{ route('food.details') }}">
                             <div class="d-flex align-items-center">
                                 <div class="flex-shrink-0">
                                     <img src="{{ asset('assets/img/foods/food4.png') }}" alt="food">
@@ -233,7 +233,7 @@
                 </div>
                 <div class="col-xl-6 col-lg-6 col-md-12 col-sm-12 my-3">
                     <div class="card">
-                        <a href="#">
+                        <a href="{{ route('food.details') }}">
                             <div class="d-flex align-items-center">
                                 <div class="flex-shrink-0">
                                     <img src="{{ asset('assets/img/foods/food5.png') }}" alt="food">
@@ -250,7 +250,7 @@
                 </div>
                 <div class="col-xl-6 col-lg-6 col-md-12 col-sm-12 my-3">
                     <div class="card">
-                        <a href="#">
+                        <a href="{{ route('food.details') }}">
                             <div class="d-flex align-items-center">
                                 <div class="flex-shrink-0">
                                     <img src="{{ asset('assets/img/foods/food6.png') }}" alt="food">
@@ -267,7 +267,7 @@
                 </div>
                 <div class="col-xl-6 col-lg-6 col-md-12 col-sm-12 my-3">
                     <div class="card">
-                        <a href="#">
+                        <a href="{{ route('food.details') }}">
                             <div class="d-flex align-items-center">
                                 <div class="flex-shrink-0">
                                     <img src="{{ asset('assets/img/foods/food7.png') }}" alt="food">
@@ -284,7 +284,7 @@
                 </div>
                 <div class="col-xl-6 col-lg-6 col-md-12 col-sm-12 my-3">
                     <div class="card">
-                        <a href="#">
+                        <a href="{{ route('food.details') }}">
                             <div class="d-flex align-items-center">
                                 <div class="flex-shrink-0">
                                     <img src="{{ asset('assets/img/foods/food8.png') }}" alt="food">
@@ -301,7 +301,7 @@
                 </div>
                 <div class="col-xl-6 col-lg-6 col-md-12 col-sm-12 my-3">
                     <div class="card">
-                        <a href="#">
+                        <a href="{{ route('food.details') }}">
                             <div class="d-flex align-items-center">
                                 <div class="flex-shrink-0">
                                     <img src="{{ asset('assets/img/foods/food9.png') }}" alt="food">
