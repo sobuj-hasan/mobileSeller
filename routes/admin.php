@@ -11,6 +11,7 @@ Route::group(['namespace' => 'Admin', 'middleware' => 'admin'], function () {
     Route::resources([
         'users' => 'UserController',
         'categories' => 'CategoryController',
+        'restaurant' => 'RestaurantController',
         // 'brands' => 'BrandController',
         'products' => 'ProductController',
         'admin/orders' => 'OrdershowController',

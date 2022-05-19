@@ -137,10 +137,10 @@
                                 </ul>
                             </li>
                             <li>
-                                <a href="javascript: void(0);"> <i class="fa-solid fa-house-laptop"></i> <span>Our Restaurants</span> <span class="menu-arrow"></span></a>
+                                <a href="javascript: void(0);"> <i class="far fa-hospital"></i> <span>Our Restaurants</span> <span class="menu-arrow"></span></a>
                                 <ul class="nav-second-level" aria-expanded="false">
-                                    <li><a href="{{ route('products.create') }}">Add New</a></li>
-                                    <li><a href="{{ route('products.index') }}">View All</a></li>
+                                    <li><a href="{{ route('restaurant.index') }}">View all restaurant</a></li>
+                                    <li><a href="{{ route('restaurant.create') }}">Add New restaurant</a></li>
                                 </ul>
                             </li>
                             <li>
@@ -248,7 +248,7 @@
         <script src="{{ asset('Backend') }}/assets/js/jquery.core.js"></script>
         <script src="{{ asset('Backend') }}/assets/js/jquery.app.js"></script>
         <!-- Bootstrap fileupload js -->
-        <script src="{{ 'Backend' }}/plugins/bootstrap-fileupload/bootstrap-fileupload.js"></script>
+        <script src="{{ asset('Backend') }}/plugins/bootstrap-fileupload/bootstrap-fileupload.js"></script>
 
         <!-- Toastr script CDN -->
         <script src="https://cdn.bootcss.com/toastr.js/latest/js/toastr.min.js"></script>
