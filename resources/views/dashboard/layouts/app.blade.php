@@ -2,7 +2,7 @@
 <html>
     <head>
         <meta charset="utf-8" />
-        <title> @yield('title') | Dashboard Safety-Incubator</title>
+        <title> @yield('title') | Dashboard Mobile Seller</title>
         <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
         <meta content="" />
         <meta content="Coderthemes" name="author" />
@@ -52,10 +52,9 @@
                 <nav style="background: #4a148c;" class="navbar-custom">
                     <ul class="list-inline float-right mb-0">
                         <li class="list-inline-item dropdown notification-list">
-                            <a class="nav-link dropdown-toggle waves-effect waves-light nav-user text-white" data-toggle="dropdown" href="#" role="button"
-                               aria-haspopup="false" aria-expanded="false">
-                               {{ Auth::user()->name }}
-                                <img style="border: 1px solid #a6adce;" src="{{ asset('safety_assets/img/users') }}/{{ Auth::user()->profile_photo }}" alt="user" class="rounded-circle">
+                            <a class="nav-link dropdown-toggle waves-effect waves-light nav-user text-white" data-toggle="dropdown" href="#" role="button" aria-haspopup="false" aria-expanded="false">
+                                {{ Auth::user()->name }}
+                                <img style="border: 1px solid #a6adce;" src="{{ asset('assets/img/users') }}/{{ Auth::user()->profile_photo }}" alt="user" class="rounded-circle">
                             </a>
                             <div class="dropdown-menu dropdown-menu-right profile-dropdown " aria-labelledby="Preview">
                                 <!-- item-->
@@ -210,7 +209,7 @@
                 </div> <!-- content -->
 
                 <footer class="footer text-right">
-                    @php echo date('Y'); @endphp © Safety Incubators
+                    @php echo date('Y'); @endphp © Mobile Seller
                 </footer>
 
             </div>

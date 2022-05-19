@@ -47,7 +47,7 @@
 
 
                         <div class="form-group">
-                            <img width="120" src="{{ asset('safety_assets/img/users') }}/{{ Auth::user()->profile_photo }}" alt="" class="image-responsive image-circle">
+                            <img width="120" src="{{ asset('assets/img/users') }}/{{ Auth::user()->profile_photo }}" alt="" class="image-responsive image-circle">
                             <br>
                             <label for="">Image</label>
                             <input type="file" class="form-control" name="profile_photo" id="image" placeholder="" value="">

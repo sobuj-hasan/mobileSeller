@@ -129,8 +129,6 @@
                                 </a>
 
                             </li>
-
-
                             <li>
                                 <a href="javascript: void(0);"><i class="fas fa-sitemap"></i> <span>Category</span> <span class="menu-arrow"></span></a>
                                 <ul class="nav-second-level" aria-expanded="false">
@@ -138,15 +136,20 @@
                                     <li><a href="{{ route('categories.index') }}">View List</a></li>
                                 </ul>
                             </li>
-
                             <li>
-                                <a href="javascript: void(0);"><i class="fab fa-product-hunt"></i> <span>Foods Menu</span> <span class="menu-arrow"></span></a>
+                                <a href="javascript: void(0);"> <i class="fa-solid fa-house-laptop"></i> <span>Our Restaurants</span> <span class="menu-arrow"></span></a>
                                 <ul class="nav-second-level" aria-expanded="false">
                                     <li><a href="{{ route('products.create') }}">Add New</a></li>
                                     <li><a href="{{ route('products.index') }}">View All</a></li>
                                 </ul>
                             </li>
-
+                            <li>
+                                <a href="javascript: void(0);"> <i class="fa-solid fa-burger"></i> <span>Foods Menu</span> <span class="menu-arrow"></span></a>
+                                <ul class="nav-second-level" aria-expanded="false">
+                                    <li><a href="{{ route('products.create') }}">Add New</a></li>
+                                    <li><a href="{{ route('products.index') }}">View All</a></li>
+                                </ul>
+                            </li>
                             <li>
                                 <a href="javascript: void(0);"><i class="fas fa-sort-amount-up"></i> <span>Manage Orders </span> <span class="menu-arrow"></span></a>
                                 <ul class="nav-second-level" aria-expanded="false">
@@ -154,7 +157,6 @@
                                     <li><a href="{{ route('orders.create') }}"> Cancle Orders </a></li>
                                 </ul>
                             </li>
-
                             <li>
                                 <a href="javascript: void(0);"><i class="fi-head"></i> <span> Manage Users</span> <span class="menu-arrow"></span></a>
                                 <ul class="nav-second-level" aria-expanded="false">
@@ -162,49 +164,38 @@
                                     <li><a href="{{ route('users.index') }}">View All</a></li>
                                 </ul>
                             </li>
-
                             <li>
                                 <a href="javascript: void(0);"><i class="fas fa-house-user"></i> <span> Subscribers </span> <span class="menu-arrow"></span></a>
                                 <ul class="nav-second-level" aria-expanded="false">
                                     <li><a href="{{ route('subscriber.index') }}">View All</a></li>
                                 </ul>
                             </li>
-
                             <li>
                                 <a href="javascript: void(0);"><i class="far fa-question-circle"></i> <span> Visitor queries </span> <span class="menu-arrow"></span></a>
                                 <ul class="nav-second-level" aria-expanded="false">
                                     <li><a href="{{ route('querstion.index') }}">View All</a></li>
                                 </ul>
                             </li>
-
                             <li>
                                 <a href="javascript: void(0);"><i class="fa-solid fa-circle-chevron-left"></i><span> Back Website </span> <span class="menu-arrow"></span></a>
                                 <ul class="nav-second-level" aria-expanded="false">
                                     <li><a href="{{ route('index') }}">Back Website</a></li>
                                 </ul>
                             </li>
-
                             <li>
                                 <a class="" href="{{ route('logout') }}"
                                     onclick="event.preventDefault(); document.getElementById('logout-form').submit();">
                                     <i class="fi-power"></i>   {{ __('Logout') }}
                                 </a>
                             </li>
-
                         </ul>
-
                     </div>
                     <!-- Sidebar -->
                     <div class="clearfix"></div>
-
                 </div>
                 <!-- Sidebar -left -->
-
             </div>
             <!-- Left Sidebar End -->
-
-
-
             <!-- ============================================================== -->
             <!-- Start right Content here -->
             <!-- ============================================================== -->

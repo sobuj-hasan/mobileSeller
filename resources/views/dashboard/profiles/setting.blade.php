@@ -16,7 +16,7 @@
 
 
         <div class="row">
-            <div class="col-md-6">
+            <div class="col-md-12">
                 <div class="card-box">
                     <h4 class="m-t-0 m-b-30 header-title">Setting <a class="btn btn-primary btn-xs float-right" href="{{ route('user.profile') }}" title=""> Back Profile </a></h4>
                     

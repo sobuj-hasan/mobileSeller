@@ -6,6 +6,9 @@
             <div class="col-12">
                 <div class="page-title-box">
                     <h4 class="page-title float-left">{{ Auth::user()->name }}</h4>
+                    <span class="btn btn-sm btn-primary ml-5">
+                        <a class="text-white" href="{{ route('index') }}"><i class="fa-solid fa-arrow-left"></i> &nbsp; Back Website</a>
+                    </span>
                     <div class="clearfix"></div>
                 </div>
             </div>

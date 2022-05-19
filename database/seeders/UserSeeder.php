@@ -18,11 +18,11 @@ class UserSeeder extends Seeder
     {
         User::create([
             'name' => 'Super Admin',
-            'email' => 'admin@mail.com',
+            'email' => 'mobile.seller@gmail.com',
             'role' => 1,
             'phone' => Str::random(10),
             'email_verified_at' => now(),
-            'password' => Hash::make('admin'),
+            'password' => Hash::make('mobile.seller'),
             'remember_token' => Str::random(10),
         ]);
 

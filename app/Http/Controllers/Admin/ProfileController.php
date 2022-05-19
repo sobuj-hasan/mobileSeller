@@ -99,7 +99,7 @@ class ProfileController extends Controller
             if ($profile_photo) {
                 $uniqname   = uniqid();
                 $ext        = strtolower($profile_photo->getClientOriginalExtension());
-                $filepath   = 'safety_assets/img/users';
+                $filepath   = 'assets/img/users';
                 $imagename  = $uniqname . '.' . $ext;
                 $profile_photo->move($filepath, $imagename);
                 $admin->profile_photo = $imagename;

@@ -20,7 +20,7 @@
                 <div class="card-box">
                     <h4 class="m-t-0 m-b-30 header-title">Profile <a class="btn btn-primary btn-xs float-right" href="{{ route('user.profile.edit') }}" title=""> Edit </a></h4>
                     <div class="text-center my-5">
-                        <img width="120" height="120" src="{{ asset('safety_assets/img/users') }}/{{ Auth::user()->profile_photo }}" alt="" class="rounded-circle">
+                        <img width="120" height="120" src="{{ asset('assets/img/users') }}/{{ Auth::user()->profile_photo }}" alt="" class="rounded-circle">
                         <h6>{{ Auth::user()->name }}</h6>
                         <h6>{{ Auth::user()->phone }}</h6>
                     </div>
