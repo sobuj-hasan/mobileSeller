@@ -8,8 +8,8 @@
                 <div class="page-title-box">
                     <h4 class="page-title float-left">Product Edit</h4>
                     <ol class="breadcrumb float-right">
-                        <li class="breadcrumb-item"><a href="#">Admin</a></li>
-                        <li class="breadcrumb-item"><a href="#">Edit Product</a></li>
+                        <li class="breadcrumb-item"><a href="">Admin</a></li>
+                        <li class="breadcrumb-item"><a href="">Edit Product</a></li>
                     </ol>
 
                     <div class="clearfix"></div>
@@ -45,14 +45,14 @@
                                 </div>
                                 <div class="col-md-6">
                                     <div class="form-group">
-                                        <label for="field-2" class="control-label">Select Brand</label>
-                                        <select class="form-control" name="brand_id">
-                                            <option value="{{ $product->brand->id }}">{{ $product->brand->name }}</option>
-                                            @foreach ($brands as $brand)
-                                                <option value="{{ $brand->id }}">{{ $brand->name }}</option>
+                                        <label for="field-2" class="control-label">Select Restaurants</label>
+                                        <select class="form-control" name="restaurant_id">
+                                            <option value="">Select Restaurant</option>
+                                            @foreach ($restaurants as $restaurant)
+                                            <option value="{{ $restaurant->id }}">{{ $restaurant->res_name }}</option>
                                             @endforeach
                                         </select>
-                                        @error('brand_id')
+                                        @error('restaurant_id')
                                             <span class="text-danger">{{ $message }}</span>
                                         @enderror
                                     </div>
@@ -77,44 +77,15 @@
                                 </div>
                                 <div class="col-md-6">
                                     <div class="form-group">
-                                        <label for="field-1" class="control-label">Sell Price</label>
-                                        <input type="text" class="form-control" id="field-1" placeholder="sell price" name="sell_price" value="{{ $product->price }}" required>
-                                        @error('sell_price')
-                                            <span class="text-danger">{{ $message }}</span>
-                                        @enderror
-                                    </div>
-                                </div>
-                                <div class="col-md-6">
-                                    <div class="form-group">
                                         <label for="field-1" class="control-label">Stock Amount</label>
-                                        <input type="text" class="form-control" id="field-1" placeholder="stock " name="stock" value="{{ $product->sell_price }}" required>
+                                        <input type="text" class="form-control" id="field-1" placeholder="stock " name="stock" value="{{ $product->stock }}" required>
                                         @error('stock_amount')
                                             <span class="text-danger">{{ $message }}</span>
                                         @enderror
                                     </div>
                                 </div>
                                 <div class="col-md-6">
-                                    <div class="form-group">
-                                        <label for="field-1" class="control-label">Short Description</label>
-                                        <textarea style="height: 245px;" class="form-control" id="field-1" placeholder="Here short description" name="short_description" required>{{ $product->short_description }}</textarea>
-                                        @error('short_description')
-                                            <span class="text-danger">{{ $message }}</span>
-                                        @enderror
-                                    </div>
-                                </div>
-                                <div class="col-md-6">
-                                    <div class="form-group">
-                                        <label for="field-1" class="control-label">Long Description</label><br>
-                                        <textarea class="summernote" cols="90" rows="8" placeholder="Design Product long description.." name="long_description">
-                                            {{ $product->long_description }}
-                                        </textarea>
-                                        @error('long_description')
-                                            <span class="text-danger">{{ $message }}</span>
-                                        @enderror
-                                    </div>
-                                </div>
-                                <div class="col-md-6">
-                                    <label for="field-1" class="control-label">Product Image</label><br>
+                                    <label for="field-1" class="control-label">Thumbmail Image</label><br>
                                     <button type="button" class="btn btn-secondary btn-file">
                                         <input type="file" class="btn-secondary" name="image"/>
                                     </button><br>
@@ -130,6 +101,15 @@
                                     @error('image_name')
                                         <span class="text-danger">{{ $message }}</span>
                                     @enderror
+                                </div>
+                                <div class="col-md-12 mt-4">
+                                    <div class="form-group">
+                                        <label for="field-1" class="control-label">Food Description</label>
+                                        <textarea style="height: 200px;" class="form-control" id="field-1" placeholder="Here short description" name="description" required>{{ $product->description }}</textarea>
+                                        @error('short_description')
+                                            <span class="text-danger">{{ $message }}</span>
+                                        @enderror
+                                    </div>
                                 </div>
                             </div>
                         </div>

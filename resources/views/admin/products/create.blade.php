@@ -1,5 +1,5 @@
 @extends('admin.layouts.app')
-@section('title',' product create')
+@section('title',' Product Create')
 @section('content')
 
  <div class="container-fluid">
@@ -8,8 +8,8 @@
                 <div class="page-title-box">
                     <h4 class="page-title float-left">Create New</h4>
                     <ol class="breadcrumb float-right">
-                        <li class="breadcrumb-item"><a href="#">Admin</a></li>
-                        <li class="breadcrumb-item"><a href="#">Create Product</a></li>
+                        <li class="breadcrumb-item"><a href="">Admin</a></li>
+                        <li class="breadcrumb-item"><a href="">Create Foodmenu</a></li>
                     </ol>
 
                     <div class="clearfix"></div>
@@ -22,21 +22,12 @@
             <div class="col-md-12">
                 <div class="modal-content">
                     <div class="modal-header">
-                        <h4 class="modal-title">Create New Product</h4>
+                        <h4 class="modal-title">Create New Food</h4>
                     </div>
                     <form method="POST" action="{{ route('products.store') }}" enctype="multipart/form-data">
                         @csrf
                         <div class="modal-body">
                             <div class="row">
-                                <div class="col-md-6">
-                                    <div class="form-group">
-                                        <label for="field-1" class="control-label">Name</label>
-                                        <input type="text" class="form-control" id="field-1" placeholder="name" name="name" value="{{ old('name') }}" required>
-                                        @error('name')
-                                            <span class="text-danger">{{ $message }}</span>
-                                        @enderror
-                                    </div>
-                                </div>
                                 <div class="col-md-6">
                                     <div class="form-group">
                                         <label for="field-2" class="control-label">Select Category</label>
@@ -53,18 +44,32 @@
                                 </div>
                                 <div class="col-md-6">
                                     <div class="form-group">
-                                        <label for="field-1" class="control-label">Price</label>
-                                        <input type="text" class="form-control" id="field-1" placeholder="price" name="price" value="{{ old('price') }}" required>
-                                        @error('price')
+                                        <label for="field-2" class="control-label">Select Restaurants</label>
+                                        <select class="form-control" name="restaurant_id">
+                                            <option value="">Select Restaurant</option>
+                                            @foreach ($restaurants as $restaurant)
+                                            <option value="{{ $restaurant->id }}">{{ $restaurant->res_name }}</option>
+                                            @endforeach
+                                        </select>
+                                        @error('restaurant_id')
                                             <span class="text-danger">{{ $message }}</span>
                                         @enderror
                                     </div>
                                 </div>
                                 <div class="col-md-6">
                                     <div class="form-group">
-                                        <label for="field-1" class="control-label">Sell Price</label>
-                                        <input type="text" class="form-control" id="field-1" placeholder="sell price" name="sell_price" value="{{ old('sell_price') }}" required>
-                                        @error('sell_price')
+                                        <label for="field-1" class="control-label">Name</label>
+                                        <input type="text" class="form-control" id="field-1" placeholder="name" name="name" value="{{ old('name') }}" required>
+                                        @error('name')
+                                            <span class="text-danger">{{ $message }}</span>
+                                        @enderror
+                                    </div>
+                                </div>
+                                <div class="col-md-6">
+                                    <div class="form-group">
+                                        <label for="field-1" class="control-label">Price</label>
+                                        <input type="text" class="form-control" id="field-1" placeholder="price" name="price" value="{{ old('price') }}" required>
+                                        @error('price')
                                             <span class="text-danger">{{ $message }}</span>
                                         @enderror
                                     </div>
@@ -79,7 +84,7 @@
                                     </div>
                                 </div>
                                 <div class="col-md-6">
-                                    <label for="field-1" class="control-label">Image <span class="text-light"> &nbsp;(Width : 300px Height: 400px)</span></label><br>
+                                    <label for="field-1" class="control-label">Thumbnail Image <span class="text-light"> &nbsp;(Width : 300px Height: 400px)</span></label><br>
                                     <button type="button" class="btn btn-secondary btn-file">
                                         <input type="file" class="btn-secondary" name="image" class="form-control" />
                                     </button><br>
@@ -88,7 +93,7 @@
                                     @enderror
                                 </div>
 
-                                {{-- <div class="col-md-6">
+                                <div class="col-md-6">
                                     <label for="field-1" class="control-label">Multiple Images <span class="text-light"></span></label><br>
                                     <button type="button" class="btn btn-secondary btn-file">
                                         <input style="width: 100%" type="file" class="btn-secondary" multiple name="image_name[]" class="form-control" />
@@ -96,33 +101,12 @@
                                     @error('image_name')
                                         <span class="text-danger">{{ $message }}</span>
                                     @enderror
-                                </div> --}}
+                                </div>
                                 <div class="col-md-12 mt-3">
                                     <div class="form-group">
-                                        <label for="field-1" class="control-label">Short Description</label>
-                                        <textarea class="form-control" rows="1" id="field-1" placeholder="Here short description" name="short_description" required>{{ old('short_description') }}</textarea>
+                                        <label for="field-1" class="control-label">Food Description</label>
+                                        <textarea class="form-control" rows="1" id="field-1" placeholder="Here short description" name="description" required>{{ old('short_description') }}</textarea>
                                         @error('short_description')
-                                            <span class="text-danger">{{ $message }}</span>
-                                        @enderror
-                                    </div>
-                                </div>
-
-                                {{-- <div class="col-md-6 mt-3">
-                                    <div class="form-group">
-                                        <label for="field-1" class="control-label">Discount</label>
-                                        <input type="number" class="form-control" id="field-1" placeholder="discount 10% or 200 SAR " name="discount" value="{{ old('discount') }}">
-                                        @error('discount')
-                                            <span class="text-danger">{{ $message }}</span>
-                                        @enderror
-                                    </div>
-                                </div> --}}
-                                <div class="col-md-12">
-                                    <div class="form-group">
-                                        <label for="field-1" class="control-label">Long Description</label><br>
-                                        <textarea class="summernote" cols="90" rows="1" placeholder="Design Product long description.." name="long_description">
-                                            {{ old('long_description') }}
-                                        </textarea>
-                                        @error('long_description')
                                             <span class="text-danger">{{ $message }}</span>
                                         @enderror
                                     </div>

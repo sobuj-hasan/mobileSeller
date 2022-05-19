@@ -8,8 +8,8 @@
                 <div class="page-title-box">
                     <h4 class="page-title float-left">All Products</h4>
                     <ol class="breadcrumb float-right">
-                        <li class="breadcrumb-item"><a href="#">Admin</a></li>
-                        <li class="breadcrumb-item"><a href="#">{{ $product->name }}</a></li>
+                        <li class="breadcrumb-item"><a href="">Admin</a></li>
+                        <li class="breadcrumb-item"><a href="">{{ $product->name }}</a></li>
                     </ol>
                     <div class="clearfix"></div>
                 </div>
@@ -32,16 +32,8 @@
                                 <td>{{ $product->category->name }}</td>
                             </tr>
                             <tr>
-                                <th>Brand</th>
-                                <td>{{ $product->brand->name }}</td>
-                            </tr>
-                            <tr>
                                 <th>Price</th>
-                                <td>{{ $product->price }}</td>
-                            </tr>
-                            <tr>
-                                <th>Salling Price</th>
-                                <td>{{ $product->sell_price }}</td>
+                                <td>{{ $product->price }} SAR</td>
                             </tr>
                             <tr>
                                 <th>Available Stock</th>
@@ -49,20 +41,17 @@
                             </tr>
                             <tr>
                                 <th>Short Description</th>
-                                <td>{{ $product->short_description }}</td>
+                                <td>{{ $product->description }}</td>
                             </tr>
                             <tr>
-                                <th>Long Description</th>
-                                <td>{!! $product->long_description !!}</td>
-                            <tr>
                                 <th>Image</th>
-                                <td><img width="100" src="{{ asset('nsseb_assets/media/images/product-img/'. $product->image) }}" alt=""></td>
+                                <td><img width="100" src="{{ asset('assets/img/foods/'. $product->image) }}" alt=""></td>
                             </tr>
                             <tr>
                                 <th>Multiple Image</th>
                                 <td>
                                     @foreach ($multiple_image as $images)
-                                        <img width="100" src="{{ asset('nsseb_assets/media/images/multiple_photo/'. $images->image_name) }}" alt="">&nbsp;&nbsp;&nbsp;&nbsp;
+                                        <img width="100" src="{{ asset('assets/img/foods/'. $images->image_name) }}" alt="">&nbsp;&nbsp;&nbsp;&nbsp;
                                     @endforeach
                                 </td>
                             </tr>

@@ -10,21 +10,20 @@ class Product extends Model
     use HasFactory;
 
     protected $fillable = [
+        'restaurant_id',
         'category_id',
-        'brand_id',
         'name',
         'slug',
-        'image',
-        'sell_price',
         'price',
+        'image',
         'stock',
-        'short_description',
-        'long_description',
+        'description',
         'user_id',
+        'image',
         'status',
     ];
 
-    protected $with = ['category', 'brand', 'multipleimage'];
+    protected $with = ['category', 'multipleimage'];
 
     public function category()
     {
@@ -34,11 +33,6 @@ class Product extends Model
     public function user()
     {
         return $this->belongsTo(User::class);
-    }
-
-    public function brand()
-    {
-        return $this->belongsTo(Brand::class);
     }
 
     public function multipleimage()

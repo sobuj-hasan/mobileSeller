@@ -10,6 +10,7 @@ use Illuminate\Http\Request;
 use App\Models\MultipleImage;
 use Idemonbd\Notify\Facades\Notify;
 use App\Http\Controllers\Controller;
+use App\Models\Restaurant;
 use Illuminate\Support\Facades\Auth;
 use Intervention\Image\Facades\Image;
 
@@ -34,7 +35,8 @@ class ProductController extends Controller
     public function create()
     {
         $categories = Category::get();
-        return view('admin.products.create', compact('categories'));
+        $restaurants = Restaurant::get();
+        return view('admin.products.create', compact('categories', 'restaurants'));
     }
 
     /**
@@ -47,12 +49,11 @@ class ProductController extends Controller
     {
         $request->validate([
             'category_id' => ['required', 'numeric'],
+            'restaurant_id' => ['required', 'numeric'],
             'name' => ['required', 'string', 'min:3', 'max:255'],
-            'sell_price' => ['required', 'string', 'numeric'],
             'price' => ['required', 'string', 'numeric'],
             'stock' => ['required', 'numeric'],
-            'short_description' => ['required', 'string' ],
-            'long_description' => ['nullable', 'string'],
+            'description' => ['required', 'string' ],
             'image' => 'required | mimes:jpg,jpeg,png,gif,svg,webp|max:2000',
         ]);
         $slug = Str::slug($request->name) . '-' . Str::random(5);
@@ -63,7 +64,7 @@ class ProductController extends Controller
         if ($request->hasFile('image')) {
             $uploaded_photo = $request->file('image');
             $photo_name = time() . "." . $uploaded_photo->getClientOriginalExtension($uploaded_photo);
-            $new_photo_location = 'safety_assets/img/products/' . $photo_name;
+            $new_photo_location = 'assets/img/foods/' . $photo_name;
 
             Image::make($uploaded_photo)->save(public_path($new_photo_location));
             Product::find($product->id)->update([
@@ -79,7 +80,7 @@ class ProductController extends Controller
                 $uploaded_photo = $single_photo;
                 $photo_name = $product->id . '-' . $flag++ . "." . $uploaded_photo->getClientOriginalExtension();
 
-                $new_photo_location = 'safety_assets/img/products/' . $photo_name;
+                $new_photo_location = 'assets/img/foods/' . $photo_name;
 
                 Image::make($uploaded_photo)->save(public_path($new_photo_location));
                 MultipleImage::create([
@@ -92,7 +93,7 @@ class ProductController extends Controller
                 }
             }
         }
-        Notify::success('Product has been added!', 'Success');
+        Notify::success('Foods has been added !', 'Success');
         return redirect()->route('products.index');
     }
 
@@ -118,8 +119,8 @@ class ProductController extends Controller
     {
         $product = Product::find($id);
         $categories = Category::get();
-        $brands = Brand::get();
-        return view('admin.products.edit', compact('product', 'categories', 'brands'));
+        $restaurants = Restaurant::get();
+        return view('admin.products.edit', compact('product', 'categories', 'restaurants'));
     }
 
     /**
@@ -133,13 +134,12 @@ class ProductController extends Controller
     {
         $request->validate([
             'category_id' => ['required', 'numeric'],
+            'restaurant_id' => ['required', 'numeric'],
             'name' => ['required', 'string', 'min:3', 'max:255'],
-            'sell_price' => ['required', 'string', 'numeric'],
             'price' => ['required', 'string', 'numeric'],
             'stock' => ['required', 'numeric'],
-            'short_description' => ['required', 'string' ],
-            'long_description' => ['nullable', 'string'],
-            'image' => 'nullable | mimes:jpg,jpeg,png,gif,svg,webp|max:2000',
+            'description' => ['required', 'string'],
+            'image' => 'mimes:jpg,jpeg,png,gif,svg,webp|max:2000',
         ]);
         $slug = Str::slug($request->name) . '-' . Str::random(5);
         $product->update($request->except('image', 'image_name') + [
@@ -149,11 +149,11 @@ class ProductController extends Controller
         if ($request->hasFile('image')) {
             if($product->image)
             {
-                unlink(public_path('safety_assets/img/products/' . $product->image));
+                unlink(public_path('assets/img/foods/' . $product->image));
             }
             $uploaded_photo = $request->file('image');
             $photo_name = time() . "." . $uploaded_photo->getClientOriginalExtension($uploaded_photo);
-            $new_photo_location = 'safety_assets/img/products/' . $photo_name;
+            $new_photo_location = 'assets/img/foods/' . $photo_name;
 
             Image::make($uploaded_photo)->save(public_path($new_photo_location));
             $product->update([
@@ -170,7 +170,7 @@ class ProductController extends Controller
                     $multiple_image->delete();
                 }
                 if ($multiple_image->image_name) {
-                    unlink(public_path('safety_assets/img/products/' . $multiple_image->image_name));
+                    unlink(public_path('assets/img/foods/' . $multiple_image->image_name));
                 }
             }
 
@@ -180,7 +180,7 @@ class ProductController extends Controller
                 $uploaded_photo = $single_photo;
                 $photo_name = $product->id . '-' . $flag++ . "." . $uploaded_photo->getClientOriginalExtension();
 
-                $new_photo_location = 'safety_assets/img/products/' . $photo_name;
+                $new_photo_location = 'assets/img/foods/' . $photo_name;
 
                 Image::make($uploaded_photo)->save(public_path($new_photo_location));
                 MultipleImage::create([
@@ -194,7 +194,7 @@ class ProductController extends Controller
             }
         }
 
-        Notify::success('Product has been updated!', 'Success');
+        Notify::success('Foods has been updated!', 'Success');
         return redirect(route('products.index'));
     }
 
@@ -207,7 +207,7 @@ class ProductController extends Controller
     public function destroy(Product $product)
     {
         $product->delete();
-        Notify::warning('Product Deleted', 'Deleted');
+        Notify::error('Foods Deleted', 'Deleted');
         return back();
     }
 }

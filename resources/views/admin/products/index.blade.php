@@ -1,15 +1,15 @@
 @extends('admin.layouts.app')
-@section('title','product list')
+@section('title','Product List')
 @section('content')
 
- <div class="container-fluid">
+    <div class="container-fluid">
         <div class="row">
             <div class="col-12">
                 <div class="page-title-box">
                     <h4 class="page-title float-left">All Products</h4>
                     <ol class="breadcrumb float-right">
-                        <li class="breadcrumb-item"><a href="#">Admin</a></li>
-                        <li class="breadcrumb-item"><a href="#">products List</a></li>
+                        <li class="breadcrumb-item"><a href="">Admin</a></li>
+                        <li class="breadcrumb-item"><a href="">products List</a></li>
                     </ol>
                     <div class="clearfix"></div>
                 </div>
@@ -21,7 +21,6 @@
             <div class="col-md-12">
                 <div class="card-box">
                     <h4 class="m-t-0 header-title pb-3"><b>All Product List</b></h4>
-
                     <div class="table-responsive">
                         <table class="table table-hover m-0 table-actions-bar">
                             <thead>
@@ -31,7 +30,6 @@
                                 <th>Name </th>
                                 <th>Category</th>
                                 <th>Price </th>
-                                <th>Sell Price </th>
                                 <th>Stock Amount </th>
                                 <th>Action </th>
                             </tr>
@@ -43,7 +41,7 @@
                                             <h5>{{ $loop->index + 1 }}</h5>
                                         </td>
                                         <td>
-                                            <img width="60px" src="{{ asset('safety_assets/img/products') }}/{{ $product->image }}" alt="img" title="contact-img"/>
+                                            <img width="60px" src="{{ asset('assets/img/foods') }}/{{ $product->image }}" alt="img" title="contact-img"/>
                                         </td>
                                         <td>
                                             <a href="{{ route('products.show', $product->id) }}">{{ $product->name }}</a>
@@ -53,9 +51,6 @@
                                         </td>
                                         <td>
                                             {{ $product->price }}
-                                        </td>
-                                        <td>
-                                            {{ $product->sell_price }}
                                         </td>
                                         <td>
                                             {{ $product->stock }}
@@ -76,9 +71,7 @@
                     </div>
                 </div>
             </div>
-
         </div>
-
     </div>
 @endsection
 
