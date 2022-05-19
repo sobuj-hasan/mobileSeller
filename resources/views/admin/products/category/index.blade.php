@@ -1,5 +1,5 @@
 @extends('admin.layouts.app')
-@section('title','category list')
+@section('title','Category List')
 @section('content')
 
  <div class="container-fluid">

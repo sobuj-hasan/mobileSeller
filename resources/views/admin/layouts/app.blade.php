@@ -2,7 +2,7 @@
 <html>
     <head>
         <meta charset="utf-8" />
-        <title> @yield('title') - Safety Incubator</title>
+        <title> @yield('title') | Mobile Seller</title>
         <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
         <meta content="" />
         <meta content="Coderthemes" name="author" />
@@ -45,7 +45,7 @@
                 <div class="topbar-left">
                     <a target="_blank" href="{{ route('index') }}" class="logo">
                         <span>
-                            <h4 class="text-white pt-2"><strong>Safety Admin</strong></h4>
+                            <h4 class="text-white pt-2"><strong>Mobile Seller Admin</strong></h4>
                         </span>
                         <i>
                             <img src="{{ asset('Backend') }}/assets/images/logo_sm.png" alt="" height="28">
@@ -61,7 +61,7 @@
                             <a class="nav-link dropdown-toggle waves-effect waves-light nav-user" data-toggle="dropdown" href="#" role="button"
                                aria-haspopup="false" aria-expanded="false">
                                {{ Auth::user()->name }}
-                                <img src="{{ asset('safety_assets/img/users') }}/{{ Auth::user()->profile_photo }}" alt="user" class="rounded-circle">
+                                <img src="{{ asset('assets/img/users') }}/{{ Auth::user()->profile_photo }}" alt="user" class="rounded-circle">
                             </a>
                             <div class="dropdown-menu dropdown-menu-right profile-dropdown " aria-labelledby="Preview">
                                 <!-- item-->
@@ -132,7 +132,7 @@
 
 
                             <li>
-                                <a href="javascript: void(0);"><i class="fas fa-sitemap"></i> <span> Category </span> <span class="menu-arrow"></span></a>
+                                <a href="javascript: void(0);"><i class="fas fa-sitemap"></i> <span>Category</span> <span class="menu-arrow"></span></a>
                                 <ul class="nav-second-level" aria-expanded="false">
                                     <li><a href="{{ route('categories.create') }}">Add New</a></li>
                                     <li><a href="{{ route('categories.index') }}">View List</a></li>
@@ -140,7 +140,7 @@
                             </li>
 
                             <li>
-                                <a href="javascript: void(0);"><i class="fab fa-product-hunt"></i> <span> Products </span> <span class="menu-arrow"></span></a>
+                                <a href="javascript: void(0);"><i class="fab fa-product-hunt"></i> <span>Foods Menu</span> <span class="menu-arrow"></span></a>
                                 <ul class="nav-second-level" aria-expanded="false">
                                     <li><a href="{{ route('products.create') }}">Add New</a></li>
                                     <li><a href="{{ route('products.index') }}">View All</a></li>
@@ -152,22 +152,6 @@
                                 <ul class="nav-second-level" aria-expanded="false">
                                     <li><a href="{{ route('orders.index') }}"> View Orders </a></li>
                                     <li><a href="{{ route('orders.create') }}"> Cancle Orders </a></li>
-                                </ul>
-                            </li>
-
-                            <li>
-                                <a href="javascript: void(0);"><i class="fas fa-sitemap"></i> <span> Blog Category </span> <span class="menu-arrow"></span></a>
-                                <ul class="nav-second-level" aria-expanded="false">
-                                    <li><a href="{{ route('blogcategories.create') }}">Add New</a></li>
-                                    <li><a href="{{ route('blogcategories.index') }}">View All</a></li>
-                                </ul>
-                            </li>
-
-                            <li>
-                                <a href="javascript: void(0);"><i class="fas fa-blog"></i> <span> Blogs </span> <span class="menu-arrow"></span></a>
-                                <ul class="nav-second-level" aria-expanded="false">
-                                    <li><a href="{{ route('blogs.create') }}">Add New</a></li>
-                                    <li><a href="{{ route('blogs.index') }}">View All</a></li>
                                 </ul>
                             </li>
 
@@ -235,7 +219,7 @@
                 </div> <!-- content -->
 
                 <footer class="footer text-right">
-                    @php echo date('Y'); @endphp © Safety Incubators
+                    @php echo date('Y'); @endphp © Mobile Seller 
                 </footer>
 
             </div>

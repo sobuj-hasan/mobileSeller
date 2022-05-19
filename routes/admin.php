@@ -11,10 +11,8 @@ Route::group(['namespace' => 'Admin', 'middleware' => 'admin'], function () {
     Route::resources([
         'users' => 'UserController',
         'categories' => 'CategoryController',
-        'blogcategories' => 'BlogCategoryController',
         // 'brands' => 'BrandController',
         'products' => 'ProductController',
-        'blogs' => 'BlogController',
         'admin/orders' => 'OrdershowController',
         'admin/subscriber' => 'SubscribeController',
         'admin/visitor/querstion' => 'VisitorQueryController',

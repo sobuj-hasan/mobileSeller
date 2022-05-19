@@ -61,7 +61,7 @@
                     </div>
                 </div>
                 <div class="col-md-5 d-none d-md-block">
-                    <div class="menubar d-flex justify-content-between align-items-center">
+                    <div class="menubar d-flex justify-content-center align-items-center">
                         <ul>
                             <li>
                                 <a href="{{ route('index') }}">Home </a>
@@ -72,14 +72,28 @@
                             <li>
                                 <a href="{{ route('contact') }}">Contact Us</a>
                             </li>
-
-                            <li class="mx-1">
-                                <a href="{{ route('login') }}" class="login-menu">Log In</a>
-                            </li>
-                            <li class="mx-1">
-                                <a href="{{ route('register') }}" class="login-menu">Create Account</a>
-                            </li>
-
+                            @if (Auth::guest())
+                                <li class="mx-1">
+                                    <a href="{{ route('login') }}" class="login-menu">Log In</a>
+                                </li>
+                                <li class="mx-1">
+                                    <a href="{{ route('register') }}" class="login-menu">Create Account</a>
+                                </li>
+                            @else
+                                <li class="">
+                                    @if (Auth::user()->role)
+                                        <a href="{{ route('admin.index') }}">
+                                            Admin Panel 
+                                            <img style="border: 1px solid #a6adce;" width="35px" height="35px" class="rounded-circle" src="{{ asset('assets/img/users/default.png') }}" alt="">
+                                        </a>
+                                    @else
+                                        <a href="{{ route('dashboard.index') }}">
+                                            My Account 
+                                            <img style="border: 1px solid #a6adce;" width="35px" height="35px" class="rounded-circle" src="{{ asset('assets/img/users/default.png') }}" alt="">
+                                        </a>
+                                    @endif
+                                </li>
+                            @endif
                         </ul>
                     </div>
                 </div>
