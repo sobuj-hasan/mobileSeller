@@ -60,6 +60,7 @@ class ProductController extends Controller
         $product = Product::create($request->all() + [
             'user_id' => Auth::id() ?? '',
             'slug' => $slug,
+            'status' => 1,
         ]);
         if ($request->hasFile('image')) {
             $uploaded_photo = $request->file('image');

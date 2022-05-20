@@ -245,6 +245,7 @@ header .custom-form{
 /* FOOD MENU SECTION START */
 .foods-part .card img{
     border-radius: 0px;
+    min-height: 180px;
 }
 .foods-part .card{
     border: 1px solid var(--gc);

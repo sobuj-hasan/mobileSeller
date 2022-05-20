@@ -33,7 +33,7 @@ Route::get('/', [FrontendController::class, 'index'])->name('index');
 Route::get('aboutus', [FrontendController::class, 'about'])->name('about');
 Route::get('contact', [FrontendController::class, 'contact'])->name('contact');
 Route::get('food/details', [FrontendController::class, 'food_details'])->name('food.details');
-Route::get('restaurant/details', [FrontendController::class, 'restaurant_details'])->name('restaurant.details');
+Route::get('restaurant/details/{id}', [FrontendController::class, 'restaurant_details'])->name('restaurant.details');
 Route::get('search/result', [FrontendController::class, 'search_result'])->name('search.result');
 Route::get('contact/message', [FrontendController::class, 'contactmessage'])->name('contact.message');
 Route::get('cart', [FrontendController::class, 'cart'])->name('cart');

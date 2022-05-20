@@ -9,23 +9,25 @@ use App\Models\Category;
 use App\Models\Subscribe;
 use Illuminate\Http\Request;
 use App\Models\ContactFormSubmit;
+use App\Models\Restaurant;
 use Idemonbd\Notify\Facades\Notify;
 use Illuminate\Support\Facades\Auth;
 
 class FrontendController extends Controller
 {
     public function index(){
-        $explore_products = Product::where('category_id', 1)->inRandomOrder()->limit(4)->get();
-        $blogs = Blog::inRandomOrder()->limit(3)->get();
-        return view('index', compact('explore_products', 'blogs'));
+        $data['restaurants'] = Restaurant::where('status', 1)->latest()->get();
+        return view('index', $data);
     }
 
     public function food_details(){
         return view('food_details');
     }
 
-    public function restaurant_details(){
-        return view('restaurant_details');
+    public function restaurant_details($id){
+        $data['single_restaurant'] = Restaurant::where('id', $id)->where('status', 1)->firstOrFail();
+        $data['restaurant_foods'] = Product::where('restaurant_id', $id)->latest()->limit(8)->get();
+        return view('restaurant_details', $data);
     }
 
     public function search_result(){
