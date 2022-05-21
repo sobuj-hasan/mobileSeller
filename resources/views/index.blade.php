@@ -46,12 +46,12 @@
                 @foreach ($foods as $food)
                     <div class="col-xl-3 my-3 mx-2 slider-item">
                         <div class="card">
-                            <img src="{{ asset('assets/img/foods/testy-food1.jpg') }}" class="card-img-top" alt="food-img">
+                            <img src="{{ asset('assets/img/foods') }}/{{ $food->image }}" class="card-img-top" alt="food-img">
                             <div class="card-body">
                                 <a href="{{ route('food.details', $food->slug) }}">
-                                    <h5 class="card-title">Food Name Here</h5>
+                                    <h5 class="card-title">{{ $food->name }}</h5>
                                 </a>
-                                <p class="paragraph">Some quick example text to build on the card title and make up the bulk of the card'scontent.</p>
+                                <p class="paragraph">{{ Str::limit($food->description, 100, $end='...') }}</p>
                             </div>
                         </div>
                     </div>
@@ -68,7 +68,7 @@
             <p class="paragraph">Find your foods </p>
             <div class="row">
                 <div class="col-xl-4 col-lg-4 col-md-6 col-sm-12 my-3">
-                    <a href="#">
+                    <a href="">
                         <div class="box d-flex justify-content-between">
                             <div class="text">
                                 All Foods for Riyadh, Saudi Arobia
@@ -80,7 +80,7 @@
                     </a>
                 </div>
                 <div class="col-xl-4 col-lg-4 col-md-6 col-sm-12 my-3">
-                    <a href="#">
+                    <a href="">
                         <div class="box d-flex justify-content-between">
                             <div class="text">
                                 All Foods for Dhaka, Bangladesh
@@ -92,7 +92,7 @@
                     </a>
                 </div>
                 <div class="col-xl-4 col-lg-4 col-md-6 col-sm-12 my-3">
-                    <a href="#">
+                    <a href="">
                         <div class="box d-flex justify-content-between">
                             <div class="text">
                                 All Foods for Sherpur, Mymenshingh
@@ -104,7 +104,7 @@
                     </a>
                 </div>
                 <div class="col-xl-4 col-lg-4 col-md-6 col-sm-12 my-3">
-                    <a href="#">
+                    <a href="">
                         <div class="box d-flex justify-content-between">
                             <div class="text">
                                 All Foods for Cumilla, Dhaka
@@ -116,7 +116,7 @@
                     </a>
                 </div>
                 <div class="col-xl-4 col-lg-4 col-md-6 col-sm-12 my-3">
-                    <a href="#">
+                    <a href="">
                         <div class="box d-flex justify-content-between">
                             <div class="text">
                                 All Foods for Riyadh, Saudi Arobia
@@ -128,7 +128,7 @@
                     </a>
                 </div>
                 <div class="col-xl-4 col-lg-4 col-md-6 col-sm-12 my-3">
-                    <a href="#">
+                    <a href="">
                         <div class="box d-flex justify-content-between">
                             <div class="text">
                                 All Foods for Dhaka, Bangladesh

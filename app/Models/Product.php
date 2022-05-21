@@ -23,11 +23,16 @@ class Product extends Model
         'status',
     ];
 
-    protected $with = ['category', 'multipleimage'];
+    protected $with = ['category', 'user', 'multipleimage', 'restaurant'];
 
     public function category()
     {
         return $this->belongsTo(Category::class);
+    }
+
+    public function restaurant()
+    {
+        return $this->belongsTo(Restaurant::class);
     }
 
     public function user()
@@ -37,7 +42,7 @@ class Product extends Model
 
     public function multipleimage()
     {
-        return $this->belongsTo(MultipleImage::class);
+        return $this->belongsTo(MultipleImage::class, 'product_id');
     }
 
 

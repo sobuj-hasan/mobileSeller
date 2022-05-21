@@ -259,6 +259,9 @@ header .custom-form{
 .new-testy .card:hover h5{
     color: #400e5e;
 }
+.new-testy .card img{
+    max-height: 290px;
+}
 /* NEW TESTY FOOD SECTION END */
 
 /* DISTRICT FOOD SECTION START */
@@ -531,7 +534,7 @@ header .custom-form{
 }
 .resturant-foods .card img{
     max-width: 170px;
-    max-height: 170px;
+    max-height: 136px;
 }
 .resturant-foods .card h5{
     transition: 0.3s;

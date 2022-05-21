@@ -13,34 +13,22 @@
                     </div>
                     <div class="multiple-img">
                         <div class="row my-2 image-slider">
-                            <div class="col-xl-2 col-lg-2 col-md-3 col-sm-4">
-                                <img src="{{ asset('assets/img/photos/details-banner-2.png') }}" alt="">
-                            </div>
-                            <div class="col-xl-2 col-lg-2 col-md-3 col-sm-4">
-                                <img src="{{ asset('assets/img/photos/details-banner-2.png') }}" alt="">
-                            </div>
-                            <div class="col-xl-2 col-lg-2 col-md-3 col-sm-4">
-                                <img src="{{ asset('assets/img/photos/details-banner-2.png') }}" alt="">
-                            </div>
-                            <div class="col-xl-2 col-lg-2 col-md-3 col-sm-4">
-                                <img src="{{ asset('assets/img/photos/details-banner-2.png') }}" alt="">
-                            </div>
-                            <div class="col-xl-2 col-lg-2 col-md-3 col-sm-4">
-                                <img src="{{ asset('assets/img/photos/details-banner-2.png') }}" alt="">
-                            </div>
-                            <div class="col-xl-2 col-lg-2 col-md-3 col-sm-4">
-                                <img src="{{ asset('assets/img/photos/details-banner-2.png') }}" alt="">
-                            </div>
+                            @foreach ($multipleimage as $images)
+                                <div class="col-xl-2 col-lg-2 col-md-3 col-sm-4">
+                                    <img src="{{ asset('assets/img/foods') }}/{{ $images->image_name }}" alt="img">
+                                </div>
+                            @endforeach
                         </div>
                     </div>
                 </div>
                 <div class="col-xl-6 col-lg-6 col-md-12 col-sm-12">
                     <div class="food-description mt-4 ms-4">
-                        <h4>Kepiting Saus Asam Manis</h4>
-                        <p><span>Category : </span> Category Name</p>
-                        <p><span>Restaurant : </span> Restaurant Name</p>
-                        <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Magnam asperiores enim, aliquid porro totam corporis et corrupti laboriosam neque ipsum a dolor maiores nobis tenetur, iure dolore nisi vitae officiis?</p>
-                        
+                        <h4>{{ $single_food->name }}</h4>
+                        <p><span>Category : </span> {{ $single_food->category->name }}</p>
+                        <p><span>Restaurant : </span> {{ $single_food->restaurant->res_name }}</p>
+                        <p>
+                            {{ Str::limit($single_food->description, 500, $end='...') }}
+                        </p>
                         <div class="content mt-4 mt-md-0">
                             <div class="quantity d-inline-block mt-3">
                                 <h6>Quantity</h6>
@@ -148,62 +136,6 @@
                             bawa aja kesini recommended banget!</p>
                     </div>
                 </div>
-                <div class="col-xl-6 col-lg-6 col-md-6 col-sm-12 my-2">
-                    <div class="review-card">
-                        <div class="d-flex">
-                            <div class="flex-shrink-0">
-                                <img src="{{ asset('assets/img/users/user1.png') }}" alt="user-photo">
-                            </div>
-                            <div class="flex-grow-1 ms-3">
-                                <h6>Raka Prasetyo</h6>
-                                <p>114 written reviews</p>
-                            </div>
-                        </div>
-                        <div class="star-point d-flex">
-                            <div class="star">
-                                <i class="fa-solid fa-star"></i>
-                                <i class="fa-solid fa-star"></i>
-                                <i class="fa-solid fa-star"></i>
-                                <i class="fa-solid fa-star"></i>
-                                <i class="fa-solid fa-star"></i>
-                            </div>
-                            <div class="time">
-                                <span class="ms-3">29 August 2020</span>
-                            </div>
-                        </div>
-                        <p class="mt-2">Kepiting sausnya maknyuss banget, bakal sering kesini bareng keluarga atau kalau
-                            ada temen/kerabat datang ke Balikpapan
-                            bawa aja kesini recommended banget!</p>
-                    </div>
-                </div>
-                <div class="col-xl-6 col-lg-6 col-md-6 col-sm-12 my-2">
-                    <div class="review-card">
-                        <div class="d-flex">
-                            <div class="flex-shrink-0">
-                                <img src="{{ asset('assets/img/users/user1.png') }}" alt="user-photo">
-                            </div>
-                            <div class="flex-grow-1 ms-3">
-                                <h6>Rizqon Maulana</h6>
-                                <p>114 written reviews</p>
-                            </div>
-                        </div>
-                        <div class="star-point d-flex">
-                            <div class="star">
-                                <i class="fa-solid fa-star"></i>
-                                <i class="fa-solid fa-star"></i>
-                                <i class="fa-solid fa-star"></i>
-                                <i class="fa-solid fa-star"></i>
-                                <i class="fa-solid fa-star"></i>
-                            </div>
-                            <div class="time">
-                                <span class="ms-3">29 August 2020</span>
-                            </div>
-                        </div>
-                        <p class="mt-2">Kepiting sausnya maknyuss banget, bakal sering kesini bareng keluarga atau kalau
-                            ada temen/kerabat datang ke Balikpapan
-                            bawa aja kesini recommended banget!</p>
-                    </div>
-                </div>
             </div>
         </div>
     </section>
@@ -211,115 +143,33 @@
 
     <!-- RESTAURANT WISE FOOD PART START -->
     <section class="resturant-foods py-4">
-        <div class="container">
+        <div class="container mb-5">
             <h4>You Might Order</h4>
-            <div class="row justify-content-center">
-                <div class="col-xl-6 col-lg-6 col-md-12 col-sm-12 my-3">
-                    <div class="card">
-                        <a href="{{ route('food.details') }}">
-                            <div class="d-flex align-items-center">
-                                <div class="flex-shrink-0">
-                                    <img src="{{ asset('assets/img/foods/food4.png') }}" alt="food">
+            <div class="row">
+                @forelse ($related_products as $related_product)
+                    <div class="col-xl-6 col-lg-6 col-md-12 col-sm-12 my-3">
+                        <div class="card">
+                            <a href="{{ route('food.details', $related_product->slug) }}">
+                                <div class="d-flex align-items-center">
+                                    <div class="flex-shrink-0">
+                                        <img src="{{ asset('assets/img/foods') }}/{{ $related_product->image }}" alt="food">
+                                    </div>
+                                    <div class="flex-grow-1 ms-3">
+                                        <h5 class="mt-3">{{ $related_product->name }}</h5>
+                                        <p>{{ Str::limit($related_product->description, 100, $end='...') }}</p>
+                                        <h6>{{ $related_product->price }} SAR</h6>
+                                    </div>
                                 </div>
-                                <div class="flex-grow-1 ms-3">
-                                    <h5 class="mt-3">Gulai Kepala Kakap Name</h5>
-                                    <p>This is some content from a media component. You can replace this with any
-                                        content and adjust it as needed.</p>
-                                    <h6>SAR 74.00</h6>
-                                </div>
-                            </div>
-                        </a>
+                            </a>
+                        </div>
                     </div>
-                </div>
-                <div class="col-xl-6 col-lg-6 col-md-12 col-sm-12 my-3">
-                    <div class="card">
-                        <a href="{{ route('food.details') }}">
-                            <div class="d-flex align-items-center">
-                                <div class="flex-shrink-0">
-                                    <img src="{{ asset('assets/img/foods/food5.png') }}" alt="food">
-                                </div>
-                                <div class="flex-grow-1 ms-3">
-                                    <h5 class="mt-3">Kepiting Saus Asam Manis</h5>
-                                    <p>This is some content from a media component. You can replace this with any
-                                        content and adjust it as needed.</p>
-                                    <h6>SAR 74.00</h6>
-                                </div>
-                            </div>
-                        </a>
-                    </div>
-                </div>
-                <div class="col-xl-6 col-lg-6 col-md-12 col-sm-12 my-3">
-                    <div class="card">
-                        <a href="{{ route('food.details') }}">
-                            <div class="d-flex align-items-center">
-                                <div class="flex-shrink-0">
-                                    <img src="{{ asset('assets/img/foods/food6.png') }}" alt="food">
-                                </div>
-                                <div class="flex-grow-1 ms-3">
-                                    <h5 class="mt-3">Gulai Kepala Kakap Name</h5>
-                                    <p>This is some content from a media component. You can replace this with any
-                                        content and adjust it as needed.</p>
-                                    <h6>SAR 74.00</h6>
-                                </div>
-                            </div>
-                        </a>
-                    </div>
-                </div>
-                <div class="col-xl-6 col-lg-6 col-md-12 col-sm-12 my-3">
-                    <div class="card">
-                        <a href="{{ route('food.details') }}">
-                            <div class="d-flex align-items-center">
-                                <div class="flex-shrink-0">
-                                    <img src="{{ asset('assets/img/foods/food7.png') }}" alt="food">
-                                </div>
-                                <div class="flex-grow-1 ms-3">
-                                    <h5 class="mt-3">Udang Tiger Bumbu Balado</h5>
-                                    <p>This is some content from a media component. You can replace this with any
-                                        content and adjust it as needed.</p>
-                                    <h6>SAR 74.00</h6>
-                                </div>
-                            </div>
-                        </a>
-                    </div>
-                </div>
-                <div class="col-xl-6 col-lg-6 col-md-12 col-sm-12 my-3">
-                    <div class="card">
-                        <a href="{{ route('food.details') }}">
-                            <div class="d-flex align-items-center">
-                                <div class="flex-shrink-0">
-                                    <img src="{{ asset('assets/img/foods/food8.png') }}" alt="food">
-                                </div>
-                                <div class="flex-grow-1 ms-3">
-                                    <h5 class="mt-3">Kepiting Saus Asam Manis</h5>
-                                    <p>This is some content from a media component. You can replace this with any
-                                        content and adjust it as needed.</p>
-                                    <h6>SAR 74.00</h6>
-                                </div>
-                            </div>
-                        </a>
-                    </div>
-                </div>
-                <div class="col-xl-6 col-lg-6 col-md-12 col-sm-12 my-3">
-                    <div class="card">
-                        <a href="{{ route('food.details') }}">
-                            <div class="d-flex align-items-center">
-                                <div class="flex-shrink-0">
-                                    <img src="{{ asset('assets/img/foods/food9.png') }}" alt="food">
-                                </div>
-                                <div class="flex-grow-1 ms-3">
-                                    <h5 class="mt-3">Udang Tiger Bumbu Balado</h5>
-                                    <p>This is some content from a media component. You can replace this with any
-                                        content and adjust it as needed.</p>
-                                    <h6>SAR 74.00</h6>
-                                </div>
-                            </div>
-                        </a>
-                    </div>
-                </div>
+                @empty
+                    <h6 class="text-danger mt-4">Nothing to show any related Foods...</h6>
+                @endforelse
             </div>
-            <div class="load-more text-center my-5">
+            {{-- <div class="load-more text-center my-5">
                 <a href="#">Load More</a>
-            </div>
+            </div> --}}
         </div>
     </section>
     <!-- RESTAURANT WISE FOOD PART END -->

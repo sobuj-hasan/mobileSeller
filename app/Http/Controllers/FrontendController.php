@@ -7,9 +7,10 @@ use App\Models\Billing;
 use App\Models\Product;
 use App\Models\Category;
 use App\Models\Subscribe;
-use Illuminate\Http\Request;
-use App\Models\ContactFormSubmit;
 use App\Models\Restaurant;
+use Illuminate\Http\Request;
+use App\Models\MultipleImage;
+use App\Models\ContactFormSubmit;
 use Idemonbd\Notify\Facades\Notify;
 use Illuminate\Support\Facades\Auth;
 
@@ -22,7 +23,9 @@ class FrontendController extends Controller
     }
 
     public function food_details($slug){
-        $data['single_food'] = Product::where('slug', $slug)->get();
+        $data['single_food'] = Product::where('slug', $slug)->first();
+        $data['multipleimage'] = MultipleImage::where('product_id', $data['single_food']->id)->get();
+        $data['related_products'] = Product::where('category_id', $data['single_food']->category_id)->where('id', '!=', $data['single_food']->id)->get();
         return view('food_details', $data);
     }
 
