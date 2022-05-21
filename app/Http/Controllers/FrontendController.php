@@ -51,22 +51,6 @@ class FrontendController extends Controller
         return view('about');
     }
     
-    public function subscribe(Request $request){
-        $request->validate([
-            'email' => 'required|email',
-        ]);
-        if (Auth::user()) {
-            $user_id = Auth::user()->id;
-            Subscribe::create($request->except('_token') + [
-                'user_id' => $user_id,
-            ]);
-        } else {
-            Subscribe::create($request->except('_token'));
-        }
-        Notify::success('Successfully Subscribed', 'Congrats, Dear');
-        return back();
-    }
-    
     public function contactmessage(Request $request){
         $request->validate([
             'name' => 'required|min:2',

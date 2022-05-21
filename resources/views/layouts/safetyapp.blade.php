@@ -27,6 +27,8 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css"/>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" />
     <!--    SLICK SLIDER-->
+    <!-- Toaster Bootstrap cdn -->
+    <link rel="stylesheet" href="https://cdn.bootcss.com/toastr.js/latest/css/toastr.min.css" />
     <link rel="stylesheet" href="{{ asset('assets/css/slick-theme.css') }}">
     <link rel="stylesheet" href="{{ asset('assets/css/slick.css') }}">
     <!--    MAIN CSS-->
@@ -239,11 +241,24 @@
 
     <!--    JQUERY-->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <!--    boostrap-->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"></script>
     <!--    SLICK SLIDER-->
     <script src="{{ asset('assets/js/slick.min.js') }}"></script>
     <!--    BOOSTRAP-->
     <script src="{{ asset('assets/js/bootstrap.min.js') }}"></script>
+    <!-- Toastr script CDN -->
+    <script src="https://cdn.bootcss.com/toastr.js/latest/js/toastr.min.js"></script>
     <script src="{{ asset('assets/js/main.js') }}"></script>
+    <!-- Toastr Scripts render -->
+    {!! Notify::message() !!}
+    @if ($errors->any())
+        @foreach ($errors->all() as $error)
+        <script>
+            toastr.error(`{!! $error !!}`, 'Error')
+        </script>
+        @endforeach
+    @endif
 
     <script>
         $('.taste-food-slider').slick({

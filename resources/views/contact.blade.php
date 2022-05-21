@@ -23,8 +23,8 @@
             </div>
         </div>
         <div class="container contact mt-5">
-            <form method="GET" action="">
-                
+            <form method="GET" action="{{ route('contact.message') }}">
+                @csrf
                 <div class="row p-3 p-md-5 mt-2 mt-sm-0">
                     <div class="col-12 text-center mb-5">
                         <h4>I hope your honorable person will fill out this form to serve you to the fullest</h4>
@@ -33,42 +33,63 @@
                         <div class="mb-4">
                             <label for="name" class="form-label">I’m honored by Name</label>
                             <input type="text" class="form-control" value="" name="name">
+                            @error('name')
+                                <span class="text-danger">{{ $message }}</span>
+                            @enderror
                         </div>
                     </div>
                     <div class="col-sm-6">
                         <div class="mb-4">
                             <label for="name" class="form-label">Email Address</label>
-                            <input type="text" class="form-control" value="" name="Email Address">
+                            <input type="text" class="form-control" value="" name="email">
+                            @error('email')
+                                <span class="text-danger">{{ $message }}</span>
+                            @enderror
                         </div>
                     </div>
                     <div class="col-sm-6">
                         <div class="mb-4">
                             <label for="name" class="form-label">Landline/Phone </label>
                             <input type="text" class="form-control" value="" name="phone">
+                            @error('phone')
+                                <span class="text-danger">{{ $message }}</span>
+                            @enderror
                         </div>
                     </div>
                     <div class="col-sm-6">
                         <div class="mb-4">
                             <label for="name" class="form-label">What do you want to inquire about?</label>
                             <input type="text" class="form-control" value="" name="subject">
+                            @error('subject')
+                                <span class="text-danger">{{ $message }}</span>
+                            @enderror
                         </div>
                     </div>
                     <div class="col-sm-6">
                         <div class="mb-4">
                             <label for="name" class="form-label">What programs &amp; services are you interested?</label>
                             <input type="text" class="form-control" value="" name="profession">
+                            @error('profession')
+                                <span class="text-danger">{{ $message }}</span>
+                            @enderror
                         </div>
                     </div>
                     <div class="col-sm-6">
                         <div class="mb-4">
                             <label for="name" class="form-label">Your Address</label>
                             <input type="text" class="form-control" value="" name="city">
+                            @error('city')
+                                <span class="text-danger">{{ $message }}</span>
+                            @enderror
                         </div>
                     </div>
                     <div class="col-12">
                         <div class="mb-2">
                             <textarea style="height: 175px;" rows="5" class="form-control" placeholder="What do  you need"
                                 name="message"></textarea>
+                                @error('message')
+                                    <span class="text-danger">{{ $message }}</span>
+                                @enderror
                         </div>
                     </div>
     
