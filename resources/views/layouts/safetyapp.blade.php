@@ -261,6 +261,116 @@
         @endforeach
     @endif
 
+    <!-----for Ajax handeling----->
+    <script type="text/javascript">
+        $.ajaxSetup({
+            headers: {
+                'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+            }
+        });
+    </script>
+    {{-- Product add to cart use Ajax --}}
+    <script>
+        $(document).ready(function(){
+            showcartcount();
+             showcartsummary();
+              showcartcontent();
+        });
+
+        function showcartcount(){
+            $.ajax({
+                url: "{{ route('cart.count') }}",
+                success: function(data) {
+                    $('.shoppingcartshow').html(data);
+                }
+            });
+        }
+
+        function showcartcontent(){
+            $.ajax({
+                url: "{{ route('cart.content') }}",
+                success: function(data) {
+                    $('#cartcontentshow').html(data);
+                }
+            });
+        }
+
+        function showcartsummary(){
+            $.ajax({
+                url: "{{ route('cart.summary') }}",
+                success: function(data) {
+                    $('#cartsummaryshow').html(data);
+                }
+            });
+        }
+
+        // Product add to cart uses ajax request
+        // $('.product_id').on('click',function(e){
+        //     e.preventDefault();
+        //     var product_id = $(this).data('id');
+
+        //       var url = "{{ route('add_to_cart') }}";
+
+        //     $.ajax({
+        //         type: "post",
+        //         url: url,
+        //         data: {
+        //             product_id: product_id
+        //         },
+        //         success: function(data){
+        //             showcartcount();
+        //             showcartcontent();
+        //             showcartsummary();
+        //             if ($.isEmptyObject(data.error)) {
+        //                 toastr.success(data.success, 'Product successfully add to Cart', {
+        //                     timeOut: 3000
+        //                 });
+        //             } else {
+        //                 toastr.error(data.error, {
+        //                     timeOut: 3000
+        //                 });
+        //             }
+        //         },
+        //         error: function(data) {
+        //             console.log('Error:', data);
+        //         }
+        //     });
+        // });
+
+        // Product add to cart from details page
+        $('#detail_product_id').on('click',function(e){
+            e.preventDefault();
+
+            var product_id = $(this).data('id');
+            var quantity = $('#quantity').val();
+            
+            var url = "{{ route('details_add_to_cart') }}";
+            $.ajax({
+                type: "post",
+                url: url,
+                data: {
+                    product_id: product_id,
+                    quantity: quantity,
+                },
+                success: function(data){
+                    showcartcount();
+                    if ($.isEmptyObject(data.error)) {
+                        toastr.success(data.success, 'Product successfully add to Cart', {
+                            timeOut: 3000
+                        });
+                    } else {
+                        toastr.error(data.error, {
+                            timeOut: 3000
+                        });
+                    }
+                },
+                error: function(data) {
+                    console.log('Error:', data);
+                }
+            }); 
+        });
+    </script>
+
     <script>
         $('.taste-food-slider').slick({
             slidesToShow: 5,

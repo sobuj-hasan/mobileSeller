@@ -45,12 +45,11 @@
                                     </div>
                                 </div>
                             </div>
-                        
                             <div class="buttons ps-sm-2 d-inline-block">
-                                <form id="save_later_form" method="POST" action="#">
-                                    <button class="add-cart-btn mt-3" id="detail_product_id" data-id="8">Add to Cart</button>
+                                <form id="save_later_form" method="" action="#">
+                                    <button class="add-cart-btn mt-3" id="detail_product_id" data-id={{ $single_food->id }}>Add to Cart</button>
 
-                                    <button type="submit" class="add-cart-btn mt-3 ms-sm-2">Save to love</button>
+                                    <button type="button" class="add-cart-btn mt-3 ms-sm-2">Save to love</button>
                                 </form>
                             </div>
                         </div>

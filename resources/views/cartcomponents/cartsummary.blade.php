@@ -18,6 +18,7 @@
                 <p class="float-end d-inline-block">{{ Cart::tax() }}</p>
             </div>
         </div>
+        <hr>
         <div class="row d-flex flex-wrap justify-content-between">
             <div class="col">
                 <p class="float-start d-inline-block">Payable Amount (SAR)</p>

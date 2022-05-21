@@ -7,7 +7,7 @@
             <div class="row">
                 <div class="col-12 text-center">
                     <div class="breab text-start text-dark py-3">
-                        <a class="text-dark" href="{{ route('index') }}">Home</a>&nbsp;<span> &gt; </span>&nbsp; <a class="text-dark" href="{{ route('shop') }}"> Shop </a> &nbsp;<span> &gt; </span>&nbsp; </span>&nbsp; <a class="text-dark">Cart</a>
+                        <a class="text-dark" href="{{ route('index') }}">Home</a>&nbsp;<span> &gt; </span>&nbsp; <a class="text-dark" href="{{ route('index') }}"> Shop </a> &nbsp;<span> &gt; </span>&nbsp; </span>&nbsp; <a class="text-dark">Cart</a>
                     </div>
                     <h5 class="py-3">SHOPPING CART INFORMATION</h5>
                 </div>
@@ -31,7 +31,7 @@
                         </div>
                         <div class="row">
                             <div class="col-12 text-end mt-4">
-                                <a class="custom-btn" href="{{ route('shop') }}">More Shop</a>
+                                <a class="custom-btn" href="{{ route('index') }}">More Shop</a>
                                 <a class="custom-btn" href="{{ route('checkout') }}">Process to checkout</a>
                             </div>
                         </div>

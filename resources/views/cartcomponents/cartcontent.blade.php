@@ -15,7 +15,7 @@
             <tr class="hide-11">
                 <td>{{ $loop->index + 1 }}</td>
                 <td>
-                    <img width="50" src="{{ asset('safety_assets/img/products/img.png') }}" alt="">
+                    <img width="50" src="{{ asset('safety_assets/img/products/img.png') }}" alt="img">
                 </td>
                 <td>{{ $cartproduct->name }}</td>
                 <td>
