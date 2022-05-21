@@ -2,12 +2,13 @@
 
 namespace App\Models;
 
+use App\Helpers\FileUploadHelper;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
 class Restaurant extends Model
 {
-    use HasFactory;
+    use HasFactory, FileUploadHelper;
 
     protected $fillable = [
         'res_name',

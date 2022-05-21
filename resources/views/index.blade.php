@@ -16,10 +16,10 @@
             <h3>Best Choice </h3>
             <p class="paragraph">These are our six best collections that you can find around City.</p>
             <div class="row justify-content-center">
-                @foreach ($restaurants as $restaurant)
+                @forelse ($restaurants as $restaurant)
                     <div class="col-xl-4 col-lg-6 col-md-6 col-sm-12 my-3">
                         <div class="card">
-                            <img src="{{ asset('assets/img/restaurant') }}/{{ $restaurant->res_image }}" class="card-img-top" alt="food-img">
+                            <img src="{{ $restaurant->urlOf('res_image') }}" class="card-img-top" alt="food-img">
                             <div class="card-body">
                                 <h5 class="card-title">{{ $restaurant->res_name }}</h5>
                                 <p class="paragraph">
@@ -29,7 +29,9 @@
                             </div>
                         </div>
                     </div>
-                @endforeach
+                    @empty 
+                    <h6 class="text-danger mt-4">Nothig to show any restaurants...</h6>
+                @endforelse
             </div>
         </div>
     </section>
@@ -43,10 +45,10 @@
         </div>
         <div class="container-fluid">
             <div class="row taste-food-slider">
-                @foreach ($foods as $food)
+                @forelse ($foods as $food)
                     <div class="col-xl-3 my-3 mx-2 slider-item">
                         <div class="card">
-                            <img src="{{ asset('assets/img/foods') }}/{{ $food->image }}" class="card-img-top" alt="food-img">
+                            <img src="{{ $food->urlOf('image') }}" class="card-img-top" alt="food-img">
                             <div class="card-body">
                                 <a href="{{ route('food.details', $food->slug) }}">
                                     <h5 class="card-title">{{ $food->name }}</h5>
@@ -55,7 +57,9 @@
                             </div>
                         </div>
                     </div>
-                @endforeach
+                    @empty
+                    <h6 class="text-danger mt-4">Nothig to show any taste foods...</h6>
+                @endforelse 
             </div>
         </div>
     </section>

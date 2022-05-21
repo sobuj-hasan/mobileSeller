@@ -663,6 +663,10 @@ header .custom-form{
     padding: 10px 50px;
 }
 
+.search-result .search-food img {
+    max-width: 250px;
+    max-height: 200px;
+}
 .search-food {
     border: 1px solid var(--gc);
     border-radius: 5px;

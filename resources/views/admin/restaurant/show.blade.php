@@ -81,7 +81,7 @@
                             </tr>
                             <tr>
                                 <th>Thumbnail Image</th>
-                                <td><img width="140" src="{{ asset('assets/img/restaurant/'. $single_restaurant->res_image) }}" alt=""></td>
+                                <td><img width="140" src="{{ $single_restaurant->urlOf('res_image') }}" alt="res_img"></td>
                             </tr>
                         </table>
                     </div>

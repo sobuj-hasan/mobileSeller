@@ -8,7 +8,7 @@
                 <div class="col-12 mt-4">
                     <div class="details-banner">
                         <h3 class="mb-3">{{ $single_restaurant->res_name }}</h3>
-                        <img src="{{ asset('assets/img/restaurant') }}/{{ $single_restaurant->res_image }}" alt="details-banner">
+                        <img src="{{ $single_restaurant->urlOf('res_image') }}" alt="details-banner">
                     </div>
                     <div class="starting">
                         <h5 class="mt-3"><span>Open (24/7 Hour Delivery)</span> </h5>
@@ -91,7 +91,7 @@
                             <a href="{{ route('food.details', $restaurant_food->slug) }}">
                                 <div class="d-flex align-items-center">
                                     <div class="flex-shrink-0">
-                                        <img src="{{ asset('assets/img/foods') }}/{{ $restaurant_food->image }}" alt="food">
+                                        <img src="{{ $restaurant_food->urlOf('image') }}" alt="food">
                                     </div>
                                     <div class="flex-grow-1 ms-3">
                                         <h5 class="mt-3">{{ $restaurant_food->name }}</h5>
@@ -103,7 +103,7 @@
                         </div>
                     </div>
                     @empty
-                    <span class="text-danger">Nothing to show any foods</span>
+                    <h6 class="text-danger mt-4">Nothing to show any foods...</h6>
                 @endforelse
             </div>
             {{-- <div class="load-more text-center my-5">

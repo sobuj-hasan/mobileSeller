@@ -43,7 +43,7 @@
                                             <h5>{{ $loop->index + 1 }}</h5>
                                         </td>
                                         <td>
-                                            <img width="80px" src="{{ asset('assets/img/restaurant') }}/{{ $restaurant->res_image }}" alt="img" title="food-img"/>
+                                            <img width="80px" src="{{ $restaurant->urlOf('res_image') }}" alt="img" title="food-img"/>
                                         </td>
                                         <td>
                                             <a href="{{ route('restaurant.show', $restaurant->id) }}">{{ $restaurant->res_name }}</a>

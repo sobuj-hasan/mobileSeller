@@ -8,14 +8,14 @@
                 <div class="col-xl-6 col-lg-6 col-md-12 col-sm-12">
                     <div class="col-12 mt-4">
                         <div class="details-banner">
-                            <img src="{{ asset('assets/img/foods') }}/{{ $single_food->image }}" alt="details-banner">
+                            <img src="{{ $single_food->urlOf('image') }}" alt="details-banner">
                         </div>
                     </div>
                     <div class="multiple-img">
                         <div class="row my-2 image-slider">
                             @foreach ($multipleimage as $images)
                                 <div class="col-xl-2 col-lg-2 col-md-3 col-sm-4">
-                                    <img src="{{ asset('assets/img/foods') }}/{{ $images->image_name }}" alt="img">
+                                    <img src="{{ $images->urlOf('image_name') }}" alt="img">
                                 </div>
                             @endforeach
                         </div>
@@ -152,7 +152,7 @@
                             <a href="{{ route('food.details', $related_product->slug) }}">
                                 <div class="d-flex align-items-center">
                                     <div class="flex-shrink-0">
-                                        <img src="{{ asset('assets/img/foods') }}/{{ $related_product->image }}" alt="food">
+                                        <img src="{{ $related_product->urlOf('image') }}" alt="food">
                                     </div>
                                     <div class="flex-grow-1 ms-3">
                                         <h5 class="mt-3">{{ $related_product->name }}</h5>

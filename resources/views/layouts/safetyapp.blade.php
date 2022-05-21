@@ -52,10 +52,11 @@
                     </div>
                 </div>
                 <div class="col-md-4 d-none d-md-block">
-                    <form action="{{ route('search.result') }}">
+                    <form method="GET" action="{{ route('search.result') }}">
+                        @csrf
                         <div class="menubar d-flex justify-content-center">
                             <div class="input-group custom-group">
-                                <input type="text" class="custom-form" placeholder="Specify your taste" aria-label="Recipient's username" aria-describedby="button-addon2">
+                                <input type="text" class="custom-form" placeholder="Specify your taste" aria-label="Recipient's username" aria-describedby="button-addon2" value="{{ old('search_data') }}" name="search_data">
                                 <button class="btn btn-outline-secondary" type="submit" id="button-addon2">
                                     <i class="fa-solid fa-magnifying-glass"></i>
                                 </button>

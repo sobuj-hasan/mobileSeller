@@ -58,15 +58,14 @@ class RestaurantController extends Controller
             'slug' => $slug,
             'status' => 1,
         ]);
+
         if ($request->hasFile('res_image')) {
-            $photo = $request->file('res_image');
-            $photo_name = time() . "." . $photo->getClientOriginalExtension($photo);
-            $location = 'assets/img/restaurant/' . $photo_name;
-            Image::make($photo)->save($location);
-            Restaurant::find($restaurant->id)->update([
-                'res_image' => $photo_name,
+            $image_path = $this->upload($request->file('res_image'), "restaurant", $restaurant->id);
+            $restaurant->update([
+                'res_image' => $image_path
             ]);
         }
+
         Notify::success('Created New Restaurant !', 'Success');
         return redirect()->route('restaurant.index');
     }
@@ -122,16 +121,9 @@ class RestaurantController extends Controller
         ]);
 
         if ($request->hasFile('res_image')) {
-            if ($restaurant->res_image) {
-                unlink('assets/img/restaurant/' . $restaurant->res_image);
-            }
-            $photo = $request->file('res_image');
-            $photo_name = time() . "." . $photo->getClientOriginalExtension($photo);
-            $location = 'assets/img/restaurant/' . $photo_name;
-
-            Image::make($photo)->save($location);
+            $image_path = $this->upload($request->file('res_image'), "restaurant", $restaurant->id);
             $restaurant->update([
-                'res_image' => $photo_name,
+                'res_image' => $image_path
             ]);
         }
         Notify::success('Restaurant infomation Updated', 'Success');
@@ -146,8 +138,8 @@ class RestaurantController extends Controller
      */
     public function destroy(Restaurant $restaurant)
     {
-        $restaurant->delete();
-        Notify::info('This Restaurant successfully Deleted', 'Deleted');
+        $restaurant->deleteWith('res_image');
+        Notify::error('This Restaurant successfully Deleted', 'Deleted');
         return back();
     }
 

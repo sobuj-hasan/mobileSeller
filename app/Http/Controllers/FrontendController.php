@@ -35,8 +35,18 @@ class FrontendController extends Controller
         return view('restaurant_details', $data);
     }
 
-    public function search_result(){
-        return view('search_result');
+    public function search_result(Request $request)
+    {
+
+        $query = Product::query();
+        if ($request->search_data) {
+            $data['search_data'] = $request->search_data;
+            $query          = $query->where('name', 'like', "%$request->search_data%")
+                                    ->orWhere('price', "$request->search_data");
+        }
+        $data['search_results'] = $query->where('status', 1)->limit(12)->get();
+
+        return view('search_result', $data);
     }
 
     public function cart(){

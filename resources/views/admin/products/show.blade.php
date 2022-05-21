@@ -45,13 +45,13 @@
                             </tr>
                             <tr>
                                 <th>Image</th>
-                                <td><img width="100" src="{{ asset('assets/img/foods/'. $product->image) }}" alt=""></td>
+                                <td><img width="100" src="{{ $product->urlOf('image') }}" alt=""></td>
                             </tr>
                             <tr>
                                 <th>Multiple Image</th>
                                 <td>
-                                    @foreach ($multiple_image as $images)
-                                        <img width="100" src="{{ asset('assets/img/foods/'. $images->image_name) }}" alt="">&nbsp;&nbsp;&nbsp;&nbsp;
+                                    @foreach ($multiple_image as $image)
+                                        <img width="100" src="{{ $image->urlOf('image_name') }}" alt="">&nbsp;&nbsp;&nbsp;&nbsp;
                                     @endforeach
                                 </td>
                             </tr>

@@ -14,6 +14,8 @@ use App\Models\Restaurant;
 use Illuminate\Support\Facades\Auth;
 use Intervention\Image\Facades\Image;
 
+use function PHPUnit\Framework\fileExists;
+
 class ProductController extends Controller
 {
     /**
@@ -62,31 +64,22 @@ class ProductController extends Controller
             'slug' => $slug,
             'status' => 1,
         ]);
+
         if ($request->hasFile('image')) {
-            $uploaded_photo = $request->file('image');
-            $photo_name = time() . "." . $uploaded_photo->getClientOriginalExtension($uploaded_photo);
-            $new_photo_location = 'assets/img/foods/' . $photo_name;
-
-            Image::make($uploaded_photo)->save(public_path($new_photo_location));
-            Product::find($product->id)->update([
-                'image' => $photo_name
+            $image_path = $this->upload($request->file('image'), "products", $product->id);
+            $product->update([
+                'image' => $image_path
             ]);
-
         }
 
         if ($request->hasFile('image_name')) {
             $flag = 1;
 
             foreach ($request->file('image_name') as $single_photo) {
-                $uploaded_photo = $single_photo;
-                $photo_name = $product->id . '-' . $flag++ . "." . $uploaded_photo->getClientOriginalExtension();
-
-                $new_photo_location = 'assets/img/foods/' . $photo_name;
-
-                Image::make($uploaded_photo)->save(public_path($new_photo_location));
+                $image_path = $this->upload($single_photo, "products", $product->id . "-" . $flag++);
                 MultipleImage::create([
                     'product_id' => $product->id,
-                    'image_name' => $photo_name,
+                    'image_name' => $image_path,
                 ]);
 
                 if ($flag == 4) {
@@ -148,17 +141,9 @@ class ProductController extends Controller
         ]);
 
         if ($request->hasFile('image')) {
-            if($product->image)
-            {
-                unlink(public_path('assets/img/foods/' . $product->image));
-            }
-            $uploaded_photo = $request->file('image');
-            $photo_name = time() . "." . $uploaded_photo->getClientOriginalExtension($uploaded_photo);
-            $new_photo_location = 'assets/img/foods/' . $photo_name;
-
-            Image::make($uploaded_photo)->save(public_path($new_photo_location));
+            $image_path = $this->upload($request->file('image'), "products", $product->id);
             $product->update([
-                'image' => $photo_name
+                'image' => $image_path
             ]);
         }
 
@@ -168,33 +153,26 @@ class ProductController extends Controller
 
             foreach ($multiple_images as $multiple_image) {
                 if ($multiple_image) {
-                    $multiple_image->delete();
-                }
-                if ($multiple_image->image_name) {
-                    unlink(public_path('assets/img/foods/' . $multiple_image->image_name));
+                    $multiple_image->deleteWith('image_name');
                 }
             }
 
-            $flag = 1;
-            foreach ($request->file('image_name') as $single_photo) {
+            if ($request->hasFile('image_name')) {
+                $flag = 1;
 
-                $uploaded_photo = $single_photo;
-                $photo_name = $product->id . '-' . $flag++ . "." . $uploaded_photo->getClientOriginalExtension();
+                foreach ($request->file('image_name') as $single_photo) {
+                    $image_path = $this->upload($single_photo, "products", $product->id . "-" . $flag++);
+                    MultipleImage::create([
+                        'product_id' => $product->id,
+                        'image_name' => $image_path,
+                    ]);
 
-                $new_photo_location = 'assets/img/foods/' . $photo_name;
-
-                Image::make($uploaded_photo)->save(public_path($new_photo_location));
-                MultipleImage::create([
-                    'product_id' => $product->id,
-                    'image_name' => $photo_name,
-                ]);
-
-                if ($flag == 4) {
-                    break;
+                    if ($flag == 4) {
+                        break;
+                    }
                 }
             }
         }
-
         Notify::success('Foods has been updated!', 'Success');
         return redirect(route('products.index'));
     }

@@ -41,7 +41,7 @@
                                             <h5>{{ $loop->index + 1 }}</h5>
                                         </td>
                                         <td>
-                                            <img width="60px" src="{{ asset('assets/img/foods') }}/{{ $product->image }}" alt="img" title="contact-img"/>
+                                            <img width="60px" src="{{ $product->urlOf('image') }}" alt="img" title="contact-img"/>
                                         </td>
                                         <td>
                                             <a href="{{ route('products.show', $product->id) }}">{{ $product->name }}</a>

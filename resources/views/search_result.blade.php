@@ -91,19 +91,20 @@
                 </div>
                 <div class="col-xl-8 col-lg-8 col-md-8 col-sm-12">
                     <div class="row">
+                        @forelse ($search_results as $search_result)
                         <div class="col-12 mb-4 mt-2">
                             <div class="search-food">
                                 <div class="d-flex align-items-center">
                                     <div class="flex-shrink-0">
-                                        <img src="{{ asset('assets/img/foods/food1.png') }}" alt="food">
+                                        <img src="{{ $search_result->urlOf('image') }}" alt="food">
                                     </div>
                                     <div class="flex-grow-1 ms-3">
-                                        <h5>Kepiting Saus Asam Manis</h5>
-                                        <h6>Al hera restaurant</h6>
+                                        <h5>{{ $search_result->name }}</h5>
+                                        <h6>{{ $search_result->restaurant->res_name }}</h6>
                                         <p>
-                                            This is some content from a media component. You can replace this with any content and adjust it as needed.
+                                            {{ Str::limit($search_result->description, 120, $end='..') }}
                                         </p>
-                                        <h5>Price : 174 SAR</h5>
+                                        <h5>Price : {{ $search_result->price }} SAR</h5>
                                         <div class="star-point d-flex">
                                             <div class="star">
                                                 <i class="fa-solid fa-star"></i>
@@ -113,176 +114,19 @@
                                                 <i class="fa-solid fa-star"></i>
                                             </div>
                                             <div class="time">
-                                                <h6 class="ms-3">4.7 <span>(114 Reviews)</span> </h6>
+                                                <h6 class="ms-3">0.0 <span>(00 Reviews)</span> </h6>
                                             </div>
                                         </div>
                                         <div class="visit-btn mt-3">
-                                            <a href="{{ route('restaurant.details') }}">Visit Foods</a>
+                                            <a href="{{ route('food.details', $search_result->slug) }}">Visit Foods</a>
                                         </div>
                                     </div>
                                 </div>
                             </div>
                         </div>
-                        <div class="col-12 mb-4">
-                            <div class="search-food">
-                                <div class="d-flex align-items-center">
-                                    <div class="flex-shrink-0">
-                                        <img src="{{ asset('assets/img/foods/food2.png') }}" alt="food">
-                                    </div>
-                                    <div class="flex-grow-1 ms-3">
-                                        <h5>Kepiting Saus Asam Manis</h5>
-                                        <h6>Al hera restaurant</h6>
-                                        <p>
-                                            This is some content from a media component. You can replace this with any content and adjust it as needed.
-                                        </p>
-                                        <h5>Price : 174 SAR</h5>
-                                        <div class="star-point d-flex">
-                                            <div class="star">
-                                                <i class="fa-solid fa-star"></i>
-                                                <i class="fa-solid fa-star"></i>
-                                                <i class="fa-solid fa-star"></i>
-                                                <i class="fa-solid fa-star"></i>
-                                                <i class="fa-solid fa-star"></i>
-                                            </div>
-                                            <div class="time">
-                                                <h6 class="ms-3">4.7 <span>(114 Reviews)</span> </h6>
-                                            </div>
-                                        </div>
-                                        <div class="visit-btn mt-3">
-                                            <a href="{{ route('restaurant.details') }}">Visit Foods</a>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-12 mb-4">
-                            <div class="search-food">
-                                <div class="d-flex align-items-center">
-                                    <div class="flex-shrink-0">
-                                        <img src="{{ asset('assets/img/foods/food3.png') }}" alt="food">
-                                    </div>
-                                    <div class="flex-grow-1 ms-3">
-                                        <h5>Kepiting Saus Asam Manis</h5>
-                                        <h6>Al hera restaurant</h6>
-                                        <p>
-                                            This is some content from a media component. You can replace this with any content and adjust it as needed.
-                                        </p>
-                                        <h5>Price : 174 SAR</h5>
-                                        <div class="star-point d-flex">
-                                            <div class="star">
-                                                <i class="fa-solid fa-star"></i>
-                                                <i class="fa-solid fa-star"></i>
-                                                <i class="fa-solid fa-star"></i>
-                                                <i class="fa-solid fa-star"></i>
-                                                <i class="fa-solid fa-star"></i>
-                                            </div>
-                                            <div class="time">
-                                                <h6 class="ms-3">4.7 <span>(114 Reviews)</span> </h6>
-                                            </div>
-                                        </div>
-                                        <div class="visit-btn mt-3">
-                                            <a href="{{ route('restaurant.details') }}">Visit Foods</a>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-12 mb-4">
-                            <div class="search-food">
-                                <div class="d-flex align-items-center">
-                                    <div class="flex-shrink-0">
-                                        <img src="{{ asset('assets/img/foods/food4.png') }}" alt="food">
-                                    </div>
-                                    <div class="flex-grow-1 ms-3">
-                                        <h5>Kepiting Saus Asam Manis</h5>
-                                        <h6>Al hera restaurant</h6>
-                                        <p>
-                                            This is some content from a media component. You can replace this with any content and adjust it as needed.
-                                        </p>
-                                        <h5>Price : 174 SAR</h5>
-                                        <div class="star-point d-flex">
-                                            <div class="star">
-                                                <i class="fa-solid fa-star"></i>
-                                                <i class="fa-solid fa-star"></i>
-                                                <i class="fa-solid fa-star"></i>
-                                                <i class="fa-solid fa-star"></i>
-                                                <i class="fa-solid fa-star"></i>
-                                            </div>
-                                            <div class="time">
-                                                <h6 class="ms-3">4.7 <span>(114 Reviews)</span> </h6>
-                                            </div>
-                                        </div>
-                                        <div class="visit-btn mt-3">
-                                            <a href="{{ route('restaurant.details') }}">Visit Foods</a>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-12 mb-4">
-                            <div class="search-food">
-                                <div class="d-flex align-items-center">
-                                    <div class="flex-shrink-0">
-                                        <img src="{{ asset('assets/img/foods/food5.png') }}" alt="food">
-                                    </div>
-                                    <div class="flex-grow-1 ms-3">
-                                        <h5>Kepiting Saus Asam Manis</h5>
-                                        <h6>Al hera restaurant</h6>
-                                        <p>
-                                            This is some content from a media component. You can replace this with any content and adjust it as needed.
-                                        </p>
-                                        <h5>Price : 174 SAR</h5>
-                                        <div class="star-point d-flex">
-                                            <div class="star">
-                                                <i class="fa-solid fa-star"></i>
-                                                <i class="fa-solid fa-star"></i>
-                                                <i class="fa-solid fa-star"></i>
-                                                <i class="fa-solid fa-star"></i>
-                                                <i class="fa-solid fa-star"></i>
-                                            </div>
-                                            <div class="time">
-                                                <h6 class="ms-3">4.7 <span>(114 Reviews)</span> </h6>
-                                            </div>
-                                        </div>
-                                        <div class="visit-btn mt-3">
-                                            <a href="{{ route('restaurant.details') }}">Visit Foods</a>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-12 mb-4">
-                            <div class="search-food">
-                                <div class="d-flex align-items-center">
-                                    <div class="flex-shrink-0">
-                                        <img src="{{ asset('assets/img/foods/food6.png') }}" alt="food">
-                                    </div>
-                                    <div class="flex-grow-1 ms-3">
-                                        <h5>Kepiting Saus Asam Manis</h5>
-                                        <h6>Al hera restaurant</h6>
-                                        <p>
-                                            This is some content from a media component. You can replace this with any content and adjust it as needed.
-                                        </p>
-                                        <h5>Price : 174 SAR</h5>
-                                        <div class="star-point d-flex">
-                                            <div class="star">
-                                                <i class="fa-solid fa-star"></i>
-                                                <i class="fa-solid fa-star"></i>
-                                                <i class="fa-solid fa-star"></i>
-                                                <i class="fa-solid fa-star"></i>
-                                                <i class="fa-solid fa-star"></i>
-                                            </div>
-                                            <div class="time">
-                                                <h6 class="ms-3">4.7 <span>(114 Reviews)</span> </h6>
-                                            </div>
-                                        </div>
-                                        <div class="visit-btn mt-3">
-                                            <a href="{{ route('restaurant.details') }}">Visit Foods</a>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
+                        @empty
+                            <h6 class="alert alert-danger text-danger">No results found...</h6>
+                        @endforelse
                     </div>
                 </div>
             </div>
