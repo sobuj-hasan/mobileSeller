@@ -8,7 +8,7 @@
                 <div class="col-xl-6 col-lg-6 col-md-12 col-sm-12">
                     <div class="col-12 mt-4">
                         <div class="details-banner">
-                            <img src="{{ asset('assets/img/foods/foods-view.png') }}" alt="details-banner">
+                            <img src="{{ asset('assets/img/foods') }}/{{ $single_food->image }}" alt="details-banner">
                         </div>
                     </div>
                     <div class="multiple-img">

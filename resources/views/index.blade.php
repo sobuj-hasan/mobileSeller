@@ -43,72 +43,19 @@
         </div>
         <div class="container-fluid">
             <div class="row taste-food-slider">
-                <div class="col-xl-3 my-3 mx-2 slider-item">
-                    <div class="card">
-                        <img src="{{ asset('assets/img/foods/testy-food1.jpg') }}" class="card-img-top" alt="food-img">
-                        <div class="card-body">
-                            <a href="{{ route('food.details') }}">
-                                <h5 class="card-title">Food Name Here</h5>
-                            </a>
-                            <p class="paragraph">Some quick example text to build on the card title and make up the bulk of the card'scontent.</p>
+                @foreach ($foods as $food)
+                    <div class="col-xl-3 my-3 mx-2 slider-item">
+                        <div class="card">
+                            <img src="{{ asset('assets/img/foods/testy-food1.jpg') }}" class="card-img-top" alt="food-img">
+                            <div class="card-body">
+                                <a href="{{ route('food.details', $food->slug) }}">
+                                    <h5 class="card-title">Food Name Here</h5>
+                                </a>
+                                <p class="paragraph">Some quick example text to build on the card title and make up the bulk of the card'scontent.</p>
+                            </div>
                         </div>
                     </div>
-                </div>
-                <div class="col-xl-3 my-3 mx-2 slider-item">
-                    <div class="card">
-                        <img src="{{ asset('assets/img/foods/testy-food2.png') }}" class="card-img-top" alt="food-img">
-                        <div class="card-body">
-                            <a href="{{ route('food.details') }}">
-                                <h5 class="card-title">Food Name Here</h5>
-                            </a>
-                            <p class="paragraph">Some quick example text to build on the card title and make up the bulk of the card'scontent.</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-xl-3 my-3 mx-2 slider-item">
-                    <div class="card">
-                        <img src="{{ asset('assets/img/foods/testy-food3.png') }}" class="card-img-top" alt="food-img">
-                        <div class="card-body">
-                            <a href="{{ route('food.details') }}">
-                                <h5 class="card-title">Food Name Here</h5>
-                            </a>
-                            <p class="paragraph">Some quick example text to build on the card title and make up the bulk of the card'scontent.</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-xl-3 my-3 mx-2 slider-item">
-                    <div class="card">
-                        <img src="{{ asset('assets/img/foods/testy-food1.jpg') }}" class="card-img-top" alt="food-img">
-                        <div class="card-body">
-                            <a href="{{ route('food.details') }}">
-                                <h5 class="card-title">Food Name Here</h5>
-                            </a>
-                            <p class="paragraph">Some quick example text to build on the card title and make up the bulk of the card'scontent.</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-xl-3 my-3 mx-2 slider-item">
-                    <div class="card">
-                        <img src="{{ asset('assets/img/foods/testy-food4.png') }}" class="card-img-top" alt="food-img">
-                        <div class="card-body">
-                            <a href="{{ route('food.details') }}">
-                                <h5 class="card-title">Food Name Here</h5>
-                            </a>
-                            <p class="paragraph">Some quick example text to build on the card title and make up the bulk of the card'scontent.</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-xl-3 my-3 mx-2 slider-item">
-                    <div class="card">
-                        <img src="{{ asset('assets/img/foods/testy-food2.png') }}" class="card-img-top" alt="food-img">
-                        <div class="card-body">
-                            <a href="{{ route('food.details') }}">
-                                <h5 class="card-title">Food Name Here</h5>
-                            </a>
-                            <p class="paragraph">Some quick example text to build on the card title and make up the bulk of the card'scontent.</p>
-                        </div>
-                    </div>
-                </div>
+                @endforeach
             </div>
         </div>
     </section>

@@ -16,12 +16,14 @@ use Illuminate\Support\Facades\Auth;
 class FrontendController extends Controller
 {
     public function index(){
-        $data['restaurants'] = Restaurant::where('status', 1)->latest()->get();
+        $data['restaurants'] = Restaurant::where('status', 1)->latest()->limit(20)->get();
+        $data['foods'] = Product::where('status', 1)->latest()->limit(40)->get();
         return view('index', $data);
     }
 
-    public function food_details(){
-        return view('food_details');
+    public function food_details($slug){
+        $data['single_food'] = Product::where('slug', $slug)->get();
+        return view('food_details', $data);
     }
 
     public function restaurant_details($id){

@@ -88,7 +88,7 @@
                 @forelse ($restaurant_foods as $restaurant_food)
                     <div class="col-xl-6 col-lg-6 col-md-12 col-sm-12 my-3">
                         <div class="card">
-                            <a href="{{ route('food.details', $restaurant_food->id) }}">
+                            <a href="{{ route('food.details', $restaurant_food->slug) }}">
                                 <div class="d-flex align-items-center">
                                     <div class="flex-shrink-0">
                                         <img src="{{ asset('assets/img/foods') }}/{{ $restaurant_food->image }}" alt="food">
